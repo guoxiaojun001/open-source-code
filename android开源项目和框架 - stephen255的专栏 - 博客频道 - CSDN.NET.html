@@ -1,0 +1,1110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0055)http://blog.csdn.net/stephen255/article/details/9121583 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/alog.mobile.min.js"></script>   
+    
+    
+    <!--AdForward Begin:-->
+<script type="text/javascript" async="" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ga.js"></script><script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=allyestest|allyestest|allyestest0410&amp;db=csdnim&amp;border=0&amp;local=yes&amp;js=ie" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/AllyesDeliver.min.js" charset="gbk" id="allyes_ins_5163a6f5" ads-outputs="0" ads-tid="23578e069_0"></script><style type="text/css"></style><script src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/share.js"></script><link rel="stylesheet" type="text/css" href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/job_reco.css"><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/main.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><link rel="stylesheet" type="text/css" href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/style.css"><link href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/bdsstyle.css" rel="stylesheet" type="text/css"><script charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/lightapp.js" data-appid="3629560" async="" name="baidu-tc-cerfication"></script><link rel="stylesheet" type="text/css" href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/style(1).css"><script src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/logger.js"></script><script src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/get" async="" type="text/javascript" charset="utf-8"></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/helper-utils-moplus-monitor_30b5848.js" _md_="_anymoore_http://apps.bdimg.com/cloudaapi/pkg/helper-utils-moplus-monitor_30b5848.js"></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/push-smartBar_6580827.js" _md_="_anymoore_http://apps.bdimg.com/cloudaapi/pkg/push-smartBar_6580827.js"></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/app-socialshare_a244e91.js" _md_="_anymoore_http://apps.bdimg.com/cloudaapi/pkg/app-socialshare_a244e91.js"></script><link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_style0_16.css?v=8105b07e.css"><script src="http://127.0.0.1:7777/weakBindLight?apikey=zGhG9os6hVZxp2KLek3cwIuM&nonce=sHBiGrTH3hMtpoLowGvG&csrftoken=ab01cc672df2133e63b9c56de99c2cd8&channel=clouda&callback=cloudaPushServiceWeakBindLight"></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/account-pay_72c563b.js" _md_="_anymoore_http://apps.bdimg.com/cloudaapi/pkg/account-pay_72c563b.js"></script></head><body class=" hPC" style="padding-bottom: 45px;"><div id="MathJax_Message" style="display: none;"></div><iframe frameborder="0" style="display: none;"></iframe><div id="23578e069_0" style="padding:0;margin:0;border:0;"><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/s"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script></div>
+<!--AdForward End-->
+
+<!--AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|homepage|floating_1&amp;db=csdnim&amp;border=0&amp;local=yes&amp;js=ie" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/AllyesDeliver.min.js" charset="gbk" id="allyes_ins_178dc32c7" ads-outputs="0" ads-tid="16b646ec4_0"></script><div id="16b646ec4_0" style="padding:0;margin:0;border:0;"><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/s(1)"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script></div>
+<!--AdForward End-->
+
+<!--AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|homepage|WebIM_1&amp;db=csdnim&amp;border=0&amp;local=yes&amp;js=ie" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/AllyesDeliver.min.js" charset="gbk" id="allyes_ins_15baf77f2" ads-outputs="0" ads-tid="1cbd8a78_0"></script><div id="1cbd8a78_0" style="padding:0;margin:0;border:0;"><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/s(2)"></script><script language="JavaScript">
+__alysLib.staticfloat({
+	fix_ad_type:"pic",
+fix_pic:"http://creatim.allyes.com.cn/imedia/csdn/20150424/09_50_40_5A9F8D7B.gif",
+href:ADFUSER2202+"http://job.csdn.net/event/profile/landingpage.html",
+	fix_pic_width:280,
+	fix_pic_height:188,
+fix_alt:'',
+	fix_light:0,
+scrollFlag:1,
+fix_tar:"_blank",
+	fix_poleft:"Vright",
+fix_defined_left_offset:0,
+fix_h_offset:0,
+fix_potop:"Vbottom",
+fix_defined_top_offset:0,
+fix_v_offset:0,
+flash_trasparent:0,
+flashparam:"",
+close:"关闭",
+CreativeCloseBtnFlag:"outside",
+CreativeCloseBtnPos:2,
+CreativeMargin: null,
+	CreativeCloseStyle:"FONT-FAMILY:宋体;font-size:12px;color:#000000;",
+closeBgColor:"#efefef",
+clickdiv:0,
+fix_bFade:false		
+});
+</script><div id="fix_floater24602846056222916" style="overflow: hidden; z-index: 99999; position: absolute; padding: 0px; visibility: visible; width: 280px; height: 203px; top: 534px; left: 1240px;"><div id="closedivid24602846056222916" style="display:;background-color:#efefef;padding:0px;text-align:right;"><span style="cursor:pointer;FONT-FAMILY:宋体;font-size:12px;color:#000000;" onclick="document.getElementById(&#39;fix_floater24602846056222916&#39;).style.display=&#39;none&#39;;">关闭</span></div><a href="http://csdnim.allyes.com/c?d=csdnim&i=z220,10241325,2202,11212&rf=http%3A%2F%2Fblog.csdn.net%2Fstephen255%2Farticle%2Fdetails%2F9121583&a=dqBJPlFan2A5yG83BrtlaS2u8&u=http://job.csdn.net/event/profile/landingpage.html" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/09_50_40_5A9F8D7B.gif" border="0" alt="" width="280" height="188"></a></div><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script><script type="text/javascript" data-belong="allyes" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/delay.min.js"></script></div>
+<!--AdForward End-->
+
+     
+    <script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script><script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/repoAddr2.js"></script>
+
+     <script id="allmobilize" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/allmobilize.min.js"></script>
+ <meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="http://blog.csdn.net/stephen255/article/details/9121583#">
+
+    <title>android开源项目和框架 - stephen255的专栏
+        - 博客频道 - CSDN.NET</title>
+    
+    <meta name="description" content="特效：http://www.androidviews.net/http://www.theultimateandroidlibrary.com/常用效果：1. https://github.com/novoda/ImageLoader  异步加载图片，缓存，生成缩略图， 基本上每个应用都会需要这个lib。    android-query框架2. https://g">
+    <script src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ad.js"></script>
+        <!--new top-->
+       
+        <link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css">
+        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/style(2).css">
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://blog.csdn.net/stephen255/rss/list">
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/default.css">
+ 
+
+
+
+
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/html.js" type="text/javascript"></script><div class="csdn-toolbar csdn-toolbar-skin-black ">        <div class="container row center-block ">          <div class="col-md-3 pull-left logo clearfix"><a href="http://www.csdn.net/?ref=toolbar" title="CSDN首页" target="_blank" class="icon"></a><a title="频道首页" href="http://blog.csdn.net/?ref=toolbar_logo" target="_blank" class="img blog-icon"></a></div>          <div class="pull-right login-wrap ">            <ul class="btns">              <li class="loginlink"><a href="https://passport.csdn.net/account/login?ref=toolbar" target="_top">登录&nbsp;</a>|<a target="_top" href="https://passport.csdn.net/account/register?ref=toolbar">&nbsp;注册</a></li>              <li class="search">                <div class="icon on-search-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <form action="http://so.csdn.net/search" method="get" target="_blank">                      <input type="hidden" value="toolbar" name="ref" accesskey="2">                      <div class="border">                        <input placeholder="搜索" type="text" value="" name="q" accesskey="2"><span class="icon-enter-sm"></span>                      </div>                    </form>                  </div>                </div>              </li>              <li class="favor">                <div class="icon on-favor-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div style="display:none;" class="favor-success"><span class="msg">收藏成功</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <div style="display:none;" class="favor-failed"><span class="icon-danger-lg"></span><span class="msg">收藏失败，请重新收藏</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <form role="form" class="form-horizontal favor-form">                      <div class="form-group">                        <div class="clearfix">                          <label for="input-title" class="col-sm-2 control-label">标题</label>                          <div class="col-sm-10">                            <input id="inputTitle" type="text" placeholder="" class="title form-control">                          </div>                        </div>                        <div class="alert alert-danger"><strong></strong>标题不能为空</div>                      </div>                      <div class="form-group">                        <label for="input-url" class="col-sm-2 control-label">网址</label>                        <div class="col-sm-10">                          <input id="input-url" type="text" placeholder="" class="url form-control">                        </div>                      </div>                      <div class="form-group">                        <label for="input-tag" class="col-sm-2 tag control-label">标签</label>                        <div class="col-sm-10">                          <input id="input-tag" type="text" class="form-control tag">                        </div>                      </div>                      <div class="form-group">                        <label for="input-description" class="description col-sm-2 control-label">摘要</label>                        <div class="col-sm-10">                          <textarea id="input-description" class="form-control description"></textarea>                        </div>                      </div>                      <div class="form-group">                        <div class="col-sm-offset-2 col-sm-10 ft">                          <div class="col-sm-4 pull-left">                            <div class="checkbox">                              <label>                                <input type="checkbox" name="share" checked="checked" class="share">公开                              </label>                            </div>                          </div>                          <div class="col-sm-8 pull-right favor-btns">                            <button type="button" class="cancel btn btn-default">取消</button>                            <button type="submit" class="submit btn btn-primary">收藏</button>                          </div>                        </div>                      </div>                    </form>                  </div>                </div>              </li>              <li class="notify">                <div style="display:none" class="number"></div>                <div style="" class="icon-hasnotes-sm"></div>                <div id="header_notice_num"><div class="icon-hasnotes" style=""></div></div>                <div class="icon on-notify-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div id="note1" class="csdn_note" style="left: -212px; top: 25px; display: none;">                      <div class="box"><div class="notifications notice_list_con curr">  <div class="menu_title">    <span class="title"><a href="http://msg.csdn.net/letters" target="_blank" class="read_all">查看所有私信</a><a href="http://msg.csdn.net/" target="_blank" class="go_all">查看所有通知</a></span>  </div>  <div class="loading" style="display: none;"></div>  <div class="empty" style="display: none;">暂没有新通知</div>  <div class="notice_content"><dl data-ids="16523886" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【开抢】Spark+Scala套餐直减100元！     </span>    <span class="count_down">3小时以前</span>  </dt></dl><dl data-ids="16447198" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【写博文得大奖】感受CSDN-Markdown带来的编辑新体验，你来不来?     </span>    <span class="count_down">04-30</span>  </dt></dl><dl data-ids="16403554" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 软考干货大集合！     </span>    <span class="count_down">04-28</span>  </dt></dl><dl data-ids="16262862" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 问答频道“天天爱答题”  第三周获奖名单已公布！     </span>    <span class="count_down">04-21</span>  </dt></dl><dl data-ids="16167783" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 天天答题赢C币 问答活动进行中~~     </span>    <span class="count_down">04-15</span>  </dt></dl><dl data-ids="16130822" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> ”天天爱答题“第二波C币已放送 你还在等什么？     </span>    <span class="count_down">04-13</span>  </dt></dl><dl data-ids="16088783" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 大波问题等你秒杀 大波礼品等你带走！     </span>    <span class="count_down">04-10</span>  </dt></dl><dl data-ids="16087171" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】2015软考系统集成项目管理工程师视频教程精讲     </span>    <span class="count_down">04-10</span>  </dt></dl><dl data-ids="16068432" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】移动手机APP测试从零开始（初级+进阶）     </span>    <span class="count_down">04-09</span>  </dt></dl><dl data-ids="16066681" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 天天爱答题 问答频道送大礼！     </span>    <span class="count_down">04-09</span>  </dt></dl><dl data-ids="16039788" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 天天爱答题  一大波C币向你袭来！     </span>    <span class="count_down">04-08</span>  </dt></dl><dl data-ids="16006372" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】软考系列教程--让你软考轻松通关     </span>    <span class="count_down">04-07</span>  </dt></dl><dl data-ids="15961710" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】Unity3D移动端实战经验分享     </span>    <span class="count_down">04-03</span>  </dt></dl><dl data-ids="15948368" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 天天爱答题 问答这厢”有礼“咯！     </span>    <span class="count_down">04-02</span>  </dt></dl><dl data-ids="15942444" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】C/C++系列教程     </span>    <span class="count_down">04-02</span>  </dt></dl><dl data-ids="15934748" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】Apple Watch开发入门     </span>    <span class="count_down">04-01</span>  </dt></dl><dl data-ids="15901129" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】HTML 5视频教程系列之JavaScript学习篇     </span>    <span class="count_down">03-31</span>  </dt></dl><dl data-ids="15790733" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】计算机操作系统     </span>    <span class="count_down">03-25</span>  </dt></dl><dl data-ids="15762516" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】【直通华为HCNA/HCNP系列1】Sx7系列交换机主要特性及选型     </span>    <span class="count_down">03-23</span>  </dt></dl><dl data-ids="15659457" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】基于Unity的游戏开发     </span>    <span class="count_down">03-16</span>  </dt></dl><dl data-ids="15621663" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 基于Unity的游戏开发(上)     </span>    <span class="count_down">03-13</span>  </dt></dl><dl data-ids="15607930" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】C语言及程序设计提高     </span>    <span class="count_down">03-12</span>  </dt></dl><dl data-ids="15590121" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】零基础学Python开发系列教程     </span>    <span class="count_down">03-11</span>  </dt></dl><dl data-ids="15575527" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】零基础学HTML 5实战开发(第一季)     </span>    <span class="count_down">03-10</span>  </dt></dl><dl data-ids="15568597" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】微信公众平台深度开发(Java版)     </span>    <span class="count_down">03-09</span>  </dt></dl><dl data-ids="15537269" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】3D游戏开发基础     </span>    <span class="count_down">03-06</span>  </dt></dl><dl data-ids="15519299" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】从零开始掌握iOS8开发技术（Swift版）第2季     </span>    <span class="count_down">03-05</span>  </dt></dl><dl data-ids="15505361" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】火星人敏捷开发1001问     </span>    <span class="count_down">03-04</span>  </dt></dl><dl data-ids="15215441" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】【深入理解计算机网络】专家解读计算机网络原理视频课程（上）     </span>    <span class="count_down">02-05</span>  </dt></dl><dl data-ids="15201610" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】Windows Server 2012 组策略管理     </span>    <span class="count_down">02-04</span>  </dt></dl><dl data-ids="15169261" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】经典JDBC+MyBatis学习视频     </span>    <span class="count_down">02-02</span>  </dt></dl><dl data-ids="15132392" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 月薪40K，20家名企送你工作和机票，赶快参与吧！     </span>    <span class="count_down">01-30</span>  </dt></dl><dl data-ids="15127779" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】微信公众平台开发入门     </span>    <span class="count_down">01-30</span>  </dt></dl><dl data-ids="15079724" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】从此不求人:自主研发一套PHP前端开发框架     </span>    <span class="count_down">01-28</span>  </dt></dl><dl data-ids="15054613" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】HTML 5项目实战：我要地图项目     </span>    <span class="count_down">01-27</span>  </dt></dl><dl data-ids="15010130" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】Unity3D实战进阶教程—第二篇     </span>    <span class="count_down">01-23</span>  </dt></dl><dl data-ids="14991723" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】【深入理解计算机网络】入门必备的计算机网络基础视频课程（下）     </span>    <span class="count_down">01-22</span>  </dt></dl><dl data-ids="14961701" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【每日一课】通俗易懂UML     </span>    <span class="count_down">01-20</span>  </dt></dl><dl data-ids="14955592" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> 【精品课程】实战进阶学习Unity3d游戏开发     </span>    <span class="count_down">01-19</span>  </dt></dl><dl data-ids="14670603" class="list rev_type1234 unread" style="/*display: none*/">  <dt>    <i></i>    <span class="item_title"> CSDN 2014博客之星评选开始啦~     </span>    <span class="count_down">12-29</span>  </dt></dl></div></div><div class="notifications detail_con" style="display: none;">  <div class="menu_title">    <span class="title">      <a class="go_back" href="javascript:void 0;">返回通知列表</a>      <a class="notifications_page_none nextnote" href="javascript:void 0;">下一条</a>      <a class="notifications_page prvnote" href="javascript:void 0;">上一条</a>    </span>  </div>  <div class="notice_content" style="overflow-y: scroll; height: 250px;"><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="16523886">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/combo/detail/29?from=msg" target="_blank">【开抢】Spark+Scala套餐直减100元！</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="16447198">    <dt>      <i></i>      <span class="item_title"><a href="http://vote.blog.csdn.net/" target="_blank">已有200位小伙伴提交了博文，现在等你啦</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="16403554">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/event/ruankao2015/" target="_blank">软考干货大集合！碉堡了~</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="16262862">    <dt>      <i></i>      <span class="item_title"><a href="http://bbs.csdn.net/topics/391008139#post-399048132" target="_blank">问答频道“天天爱答题”  第三周获奖名单已公布！</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="16167783">    <dt>      <i></i>      <span class="item_title"><a href="http://bbs.csdn.net/topics/391008139" target="_blank">天天答题赢C币 问答活动进行中~~</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="16130822">    <dt>      <i></i>      <span class="item_title"><a href="http://bbs.csdn.net/topics/391008139#post-399048132" target="_blank">活动还有两波，全新一周开始，想来的速度啦！</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="16088783">    <dt>      <i></i>      <span class="item_title"><a href="http://bbs.csdn.net/topics/391008139" target="_blank">大波问题等你秒杀 大波礼品等你带走！</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="16087171">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/lecturer/lecturer_detail?lecturer_id=269" target="_blank">【每日一课】2015软考系统集成项目管理工程师视频教程精讲</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="16068432">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/lecturer/lecturer_detail?lecturer_id=70" target="_blank">【每日一课】移动手机APP测试从零开始（初级+进阶）</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="16066681">    <dt>      <i></i>      <span class="item_title"><a href="http://bbs.csdn.net/topics/391008139" target="_blank">天天爱答题 问答频道送大礼！</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="16039788">    <dt>      <i></i>      <span class="item_title"><a href="http://bbs.csdn.net/topics/391008139" target="_blank">天天爱答题  一大波C币向你袭来！</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="16006372">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/lecturer/lecturer_detail?lecturer_id=271" target="_blank">【每日一课】软考系列教程--让你软考轻松通关</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15961710">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/289" target="_blank">【每日一课】Unity3D移动端实战经验分享</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15948368">    <dt>      <i></i>      <span class="item_title"><a href="http://bbs.csdn.net/topics/391008139" target="_blank">每天答一题 100C币就归你 提问也有奖励哦！</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15942444">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/lecturer/lecturer_detail?lecturer_id=82" target="_blank">【每日一课】C/C++系列教程</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15934748">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/543" target="_blank">【每日一课】Apple Watch开发入门</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15901129">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/463" target="_blank">【每日一课】HTML 5视频教程系列之JavaScript学习篇</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15790733">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/499" target="_blank">【每日一课】计算机操作系统</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15762516">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/530%20%C2%A0%C2%A0%C2%A0%C2%A0" target="_blank">【每日一课】【直通华为HCNA/HCNP系列1】Sx7系列交换机主要特性及选型</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15659457">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/lecturer/lecturer_detail?lecturer_id=311" target="_blank">【每日一课】基于Unity的游戏开发</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15621663">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/491" target="_blank">【每日一课】基于Unity的游戏开发(上)</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15607930">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/456" target="_blank">【每日一课】C语言及程序设计提高</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15590121">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/481" target="_blank">【每日一课】零基础学Python开发系列教程</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15575527">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/489" target="_blank">【每日一课】零基础学HTML 5实战开发(第一季)</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15568597">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/488" target="_blank">【每日一课】微信公众平台深度开发(Java版)</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15537269">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/467" target="_blank">【每日一课】3D游戏开发基础</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15519299">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/447" target="_blank">【每日一课】从零开始掌握iOS8开发技术（Swift版）第2季</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15505361">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/lecturer/lecturer_detail?lecturer_id=73" target="_blank">【每日一课】火星人敏捷开发1001问</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15215441">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/427" target="_blank">【每日一课】【深入理解计算机网络】专家解读计算机网络原理视频课程（上）</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15201610">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/378" target="_blank">【每日一课】Windows Server 2012 组策略管理</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15169261">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/390" target="_blank">【每日一课】经典JDBC+MyBatis学习视频</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15132392">    <dt>      <i></i>      <span class="item_title"><a href="http://job.csdn.net/event/mobdev.html" target="_blank">月薪40K，20家名企送你工作和机票，赶快参与吧！</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15127779">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/282" target="_blank">【每日一课】微信公众平台开发入门</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15079724">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/299" target="_blank">【每日一课】从此不求人:自主研发一套PHP前端开发框架</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15054613">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/332" target="_blank">【每日一课】HTML 5项目实战：我要地图项目</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="15010130">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/376" target="_blank">【每日一课】Unity3D实战进阶教程—第二篇</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="14991723">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/356" target="_blank">【每日一课】【深入理解计算机网络】入门必备的计算机网络基础视频课程（下）</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="14961701">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/174" target="_blank">【每日一课】通俗易懂UML</a></span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="14955592">    <dt>      <i></i>      <span class="item_title"><a href="http://edu.csdn.net/course/detail/305">&nbsp;&nbsp;【精品课程】实战进阶学习Unity3d游戏开发 </a></span><a href="http://edu.csdn.net/course/detail/305">      <span class="count_down"></span>    </a></dt><a href="http://edu.csdn.net/course/detail/305">  </a></dl><a href="http://edu.csdn.net/course/detail/305">  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  </a><a class="notifications_more" target="_blank">查看其它 0 条</a></div><div style="/*display: none*/">  <dl class="detail_list rev_type1234" data-ids="14670603">    <dt>      <i></i>      <span class="item_title">博客之星，感谢有你~<a href="http://vote.blog.csdn.net/" target="_blank">CSDN 2014博客之星评选 </a>开始啦~</span>      <span class="count_down"></span>    </dt>  </dl>  <div class="loading"></div>  <div class="empty">暂没有新通知</div>  <a class="notifications_more" target="_blank">查看其它 0 条</a></div></div></div><div class="error"></div></div>                    <iframe src="about:block" frameborder="0" allowtransparency="true" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent"></iframe></div>                  </div>                </div>              </li>              <li class="ugc">                <div class="icon on-ugc-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <dl>                      <dt><a href="http://geek.csdn.net/news/expert?ref=toolbar" target="_blank" class="p-news clearfix"><em class="icon"></em><span>分享资讯</span></a></dt>                      <dt><a href="http://share.csdn.net/slides/new?ref=toolbar" target="_blank" class="p-doc clearfix"><em class="icon"></em><span>传PPT/文档</span></a></dt>                      <dt><a href="http://bbs.csdn.net/topics/new?ref=toolbar" target="_blank" class="p-ask clearfix"><em class="icon"></em><span>提问题</span></a></dt>                      <dt><a href="http://write.blog.csdn.net/postedit?ref=toolbar" target="_blank" class="p-blog clearfix"><em class="icon"></em><span>写博客</span></a></dt>                      <dt><a href="http://u.download.csdn.net/upload?ref=toolbar" target="_blank" class="p-src clearfix"><em class="icon"></em><span>传资源</span></a></dt>                      <dt><a href="https://code.csdn.net/projects/new?ref=toolbar" target="_blank" class="c-obj clearfix"><em class="icon"></em><span>创建项目</span></a></dt>                      <dt><a href="https://code.csdn.net/snippets/new?ref=toolbar" target="_blank" class="c-code clearfix"><em class="icon"></em><span>创建代码片</span></a></dt>                    </dl>                  </div>                </div>              </li>              <li class="profile">                <div class="icon on-profile-icon"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/2_adougangan.jpg" class="curr-icon-img">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div class="bd">                      <dl class="clearfix">                        <dt class="pull-left img"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="avatar"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/2_adougangan.jpg"></a></dt>                        <dd class="info" style="border: none;"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="nickname">adougangan</a><span class="dec"><a class="fill-dec" href="http://my.csdn.net/" target="_blank">编辑自我介绍，让更多人了解你<span class="write-icon"></span></a></span></dd>                      </dl>                    </div>                    <div class="ft clearfix"><a target="_blank" href="http://my.csdn.net/my/account/changepwd?ref=toolbar" class="pull-left"><span class="icon-cog"></span>帐号设置</a><a href="https://passport.csdn.net/account/logout?ref=toolbar" target="_top" class="pull-left" style="margin-left:132px; width:18px; height:27px; white-space:nowrap; overflow:hidden;"><span class="icon-signout"></span><span class="out">退出</span></a></div>                  </div>                </div>              </li>              <li class="apps">                <div id="chasnew123" class="hasnew" style="display: none;"></div>                <div id="cappsarea123" class="icon on-apps-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>社区</h5>                      </dt>                      <dd> <a href="http://blog.csdn.net/?ref=toolbar" target="_blank">博客</a></dd>                      <dd> <a href="http://bbs.csdn.net/?ref=toolbar" target="_blank">论坛</a></dd>                      <dd> <a href="http://download.csdn.net/?ref=toolbar" target="_blank">下载</a></dd>                      <dd><a href="http://ask.csdn.net/?ref=toolbar" target="_blank">技术问答</a></dd>                      <dd><a href="http://geek.csdn.net/?ref=toolbar" target="_blank">极客头条</a></dd>                      <dd> <a href="http://hero.csdn.net/?ref=toolbar" target="_blank">英雄会</a></dd>                    </dl>                  </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>服务</h5>                      </dt>                      <dd> <a href="http://job.csdn.net/?ref=toolbar" target="_blank">JOB<img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/new.gif" style="display: none; margin-top: -26px; width: 23px;"></a></dd>                      <dd> <a href="http://edu.csdn.net/?ref=toolbar" target="_blank">学院<img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/new.gif" style="display: none; margin-top: -26px; width: 23px;"></a></dd>                      <dd> <a href="https://code.csdn.net/?ref=toolbar" target="_blank">CODE</a></dd>                      <dd> <a href="http://huiyi.csdn.net/?ref=toolbar" target="_blank">活动</a></dd>                      <dd> <a href="http://www.csto.com/?ref=toolbar" target="_blank">CSTO</a></dd>                      <dd> <a href="http://mall.csdn.net/?ref=toolbar" target="_blank">C币兑换<img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/new.gif" style="display: none; margin-top: -26px; width: 23px;"></a></dd>                    </dl>                  </div>                  <div class="detail last">                    <dl>                      <dt>                        <h5>俱乐部</h5>                      </dt>                      <dd> <a href="http://cto.csdn.net/?ref=toolbar" target="_blank">CTO俱乐部</a></dd>                      <dd> <a href="http://student.csdn.net/?ref=toolbar" target="_blank">高校俱乐部</a></dd>                    </dl>                  </div>                </div>              </div>            </li>            </ul>          </div>        </div>    </div>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/stephen255">stephen255的专栏</a></h2>
+            <h3></h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/stephen255?viewmode=contents"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_mulu&#39;])">
+                    <img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/stephen255?viewmode=list"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_zhaiyao&#39;])">
+                    <img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/stephen255/rss/list"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_RSS&#39;])">
+                    <img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "stephen255";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/stephen255";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "adougangan";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod="popu_3"> 
+
+<a href="http://vote.blog.csdn.net/" target="_blank">
+<font color="red">Markdown博文大赛清新开启
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://bbs.csdn.net/topics/391008139" target="_blank">
+<font color="blue">天天爱答题 一大波C币袭来
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+
+<a href="http://www.csdn.net/article/2015-04-22/2824535-Java" target="_blank">
+<font color="red">寻找Java大牛！</font></a>
+&nbsp;&nbsp;&nbsp;
+
+
+<a href="http://edu.csdn.net/combo/detail/29" target="_blank">
+<font color="blue">大数据完美组合Spark+Scala，这样学才够值！
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+
+</div>                        </div>
+                        
+
+  
+<link href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/comment1.css" type="text/css" rel="stylesheet">
+<link href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/style1.css" type="text/css" rel="stylesheet">
+<script language="JavaScript" type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/jquery.cookie.js"></script>
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/main(1).js"></script>
+
+
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0">
+
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/MathJax.js"></script>
+
+
+
+
+
+
+
+
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET.html">
+        android开源项目和框架
+        </a></span>
+    </h1>
+</div>
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="http://blog.csdn.net/stephen255/article/category/2127201" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_fenlei&#39;]);">框架</a> 
+        </span>
+    <span class="link_postdate">2013-06-18 16:53</span>
+    <span class="link_view" title="阅读次数">28526人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="http://blog.csdn.net/stephen255/article/details/9121583#comments" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_pinglun&#39;])">评论</a>(15)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shoucang&#39;]);collectArticle(&#39;android开源项目和框架&#39;,&#39;9121583&#39;);return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="http://blog.csdn.net/stephen255/article/details/9121583#report" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_jubao&#39;]);report(9121583,2);return false;" title="举报">举报</a></span>
+    
+</div>
+
+  
+    
+<div id="article_content" class="article_content">
+
+<p></p>
+<p><span style="font-size:14px">特效：</span></p>
+<p><a target="_blank" href="http://www.androidviews.net/" style="color:rgb(51,102,153); font-family:Arial; line-height:25.98958396911621px"><span style="font-size:14px">http://www.androidviews.net/</span></a></p>
+<p><span style="font-size:14px"><a target="_blank" href="http://www.theultimateandroidlibrary.com/" style="color:rgb(51,102,153); font-family:Arial; line-height:25.98958396911621px">http://www.theultimateandroidlibrary.com/</a><br>
+</span></p>
+<p><span style="font-size:14px">常用效果：</span></p>
+<p><span style="font-size:14px"><span style="color:rgb(51,51,51); font-family:Arial; line-height:25.98958396911621px">1.&nbsp;</span><a target="_blank" href="https://github.com/novoda/ImageLoader" style="color:rgb(51,102,153); font-family:Arial; line-height:25.98958396911621px">https://github.com/novoda/ImageLoader</a><span style="color:rgb(51,51,51); font-family:Arial; line-height:25.98958396911621px">&nbsp;
+ 异步加载图片，缓存，生成缩略图， 基本上每个应用都会需要这个lib。</span><br style="color:rgb(51,51,51); font-family:Arial; line-height:25.98958396911621px">
+&nbsp; &nbsp; android-query框架<br style="color:rgb(51,51,51); font-family:Arial; line-height:25.98958396911621px">
+<span style="font-family:Arial; line-height:25.98958396911621px"><span style="color:rgb(51,51,51)">2.&nbsp;</span><a target="_blank" href="https://github.com/chrisbanes/Android-PullToRefresh" style="line-height:25.98958396911621px"><span style="color:rgb(0,0,0)">https://github.com/chrisbanes/Android-PullToRefresh</span></a></span><span style="color:rgb(51,51,51); font-family:Arial; line-height:25.98958396911621px">&nbsp;
+ &nbsp;类似新浪微博，twitter，下拉刷新列表， 更牛的是还支持上拉加载更多。 不仅仅是ListView，而且GridView也支持。</span></span></p>
+<p><span style="color:rgb(51,51,51); font-family:Arial; line-height:25.98958396911621px"><span style="font-size:14px"><span style="line-height:25.98958396911621px">3.&nbsp;</span><a target="_blank" href="https://github.com/jfeinstein10/SlidingMenu" style="color:rgb(51,102,153); line-height:25.98958396911621px">https://github.com/jfeinstein10/SlidingMenu</a><span style="line-height:25.98958396911621px">&nbsp;和&nbsp;https://github.com/dmitry-zaitsev/AndroidSideMenu&nbsp;导航抽屉&nbsp;</span><br>
+</span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="font-size:14px">&nbsp; &nbsp;https://github.com/SimonVT/android-menudrawer&nbsp;导航抽屉&nbsp;</span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="font-size:14px"><span style="line-height:25.98958396911621px">4.&nbsp;</span><a target="_blank" href="http://actionbarsherlock.com/" style="color:rgb(51,102,153); line-height:25.98958396911621px">http://actionbarsherlock.com/</a><span style="line-height:25.98958396911621px">&nbsp;
+ 与https://github.com/JakeWharton/ActionBarSherlock &nbsp; &nbsp;actionbar.</span><br>
+</span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="font-size:14px">5&nbsp;<span style="line-height:25.98958396911621px">&nbsp;</span><a target="_blank" href="https://github.com/TonicArtos/StickyGridHeaders" style="color:rgb(51,102,153); line-height:25.98958396911621px">https://github.com/TonicArtos/StickyGridHeaders</a><span style="line-height:25.98958396911621px">&nbsp;
+ 与&nbsp;<a target="_blank" href="https://github.com/emilsjolander/StickyListHeaders" style="color:rgb(34,0,0); line-height:25.98958396911621px">https://github.com/emilsjolander/StickyListHeaders</a><span style="line-height:25.98958396911621px">&nbsp;
+ ListView导航特效</span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="font-size:14px">6&nbsp;<a target="_blank" href="https://github.com/TheLevelUp/android-left-locked-gallery" style="color:rgb(51,102,153); line-height:25.98958396911621px">https://github.com/TheLevelUp/android-left-locked-gallery</a><span style="line-height:25.98958396911621px">&nbsp;gallery抽奖效果</span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="font-size:14px">7&nbsp;<a target="_blank" title="https://github.com/huewu/PinterestLikeAdapterView" href="https://github.com/huewu/PinterestLikeAdapterView" style="color:rgb(51,102,153); line-height:25.98958396911621px">https://github.com/huewu/PinterestLikeAdapterView</a><span style="line-height:25.98958396911621px">&nbsp;
+ GridView错位效果https://github.com/youxiachai/pinterest-like-adapter-view</span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="line-height:25.98958396911621px"><span style="font-size:14px">8&nbsp;https://github.com/47deg/android-swipelistview
+ &nbsp;<span style="font-family:Helvetica,Tahoma,Arial,sans-serif; line-height:24px">实现了自定义ListView单元格，可通过滑动来显示扩展面板。</span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="line-height:25.98958396911621px"><span style="font-family:Helvetica,Tahoma,Arial,sans-serif; line-height:24px"><span style="font-size:14px">9&nbsp;https://github.com/siyamed/android-satellite-menu
+ &nbsp;<span style="line-height:24px">有一连串的按钮弹出</span></span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="line-height:25.98958396911621px"><span style="font-family:Helvetica,Tahoma,Arial,sans-serif; line-height:24px"><span style="line-height:24px"><span style="font-size:14px">10&nbsp;https://github.com/maurycyw/StaggeredGridView&nbsp;<span style="line-height:24px">交错排列的GridView</span></span></span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="line-height:25.98958396911621px"><span style="font-family:Helvetica,Tahoma,Arial,sans-serif; line-height:24px"><span style="line-height:24px"><span style="line-height:24px"><span style="font-size:14px"><span style="white-space:pre">https://github.com/dodola/android_waterfall</span>&nbsp;&nbsp;https://github.com/youxilua/waterfall4android</span></span></span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="line-height:25.98958396911621px"><span style="font-family:Helvetica,Tahoma,Arial,sans-serif; line-height:24px"><span style="line-height:24px"><span style="line-height:24px"><span style="font-size:14px"><span style="white-space:pre"></span>https://github.com/dodola/WaterFallExt
+ 瀑布流</span></span></span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="line-height:25.98958396911621px"><span style="font-family:Helvetica,Tahoma,Arial,sans-serif; line-height:24px"><span style="font-size:14px">11
+ https://github.com/daizhenjun/ImageFilterForAndroid &nbsp;<span style="line-height:24px">图片处理效果</span><br>
+</span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="line-height:25.98958396911621px"><span style="font-family:Helvetica,Tahoma,Arial,sans-serif; line-height:24px"><span style="font-size:14px">12&nbsp;https://github.com/nostra13/Android-Universal-Image-Loader
+ 异步加载图片，万能图片加载 ListView GridView ImagePage ImageGaller</span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="line-height:25.98958396911621px"><span style="font-family:Helvetica,Tahoma,Arial,sans-serif; line-height:24px"><span style="font-size:14px"><span style="white-space:pre"></span>实例：http://blog.csdn.net/banketree/article/details/8004475</span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="line-height:25.98958396911621px"><span style="font-family:Helvetica,Tahoma,Arial,sans-serif; line-height:24px"><span style="font-size:14px">13&nbsp;https://github.com/JakeWharton/Android-ViewPagerIndicator
+ 有标题页面滑动效果</span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="line-height:25.98958396911621px"><span style="font-family:Helvetica,Tahoma,Arial,sans-serif; line-height:24px"><span style="font-size:14px">14&nbsp;https://github.com/pakerfeldt/android-viewflow
+ ViewFlow图片滑动</span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="font-size:14px">13&nbsp;<a target="_blank" title="https://code.google.com/p/android-wheel/" href="https://code.google.com/p/android-wheel/" style="color:rgb(51,102,153); line-height:25.98958396911621px">https://code.google.com/p/android-wheel/</a>&nbsp;滚轮效果</span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="font-size:14px">效果图 &nbsp;<img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/21131558-30ac2174541a43cbbfc94d5afe9dc0ed.png" alt=""><br>
+</span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="font-size:14px">14 http://www.apkbus.com/android-2-1.html</span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="font-size:14px"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/132239fqofd9jdhodawno1.png" alt="104628dd3y638lqlbylbx6.png"><br>
+</span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="font-size:14px">框架：</span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="font-size:14px">1<span style="line-height:25.98958396911621px">.&nbsp;</span><a target="_blank" href="https://github.com/excilys/androidannotations" style="color:rgb(51,102,153); line-height:25.98958396911621px">https://github.com/excilys/androidannotations</a><span style="line-height:25.98958396911621px">&nbsp;
+ 一个很好的快速开发的框架， 大量使用annotation来代替，类似于RoboGuice</span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="font-size:14px">2 ormlite sqlite的orm框架 /<a target="_blank" href="https://github.com/greenrobot/greenDAO">GreenDAO</a></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="font-size:14px">3 汉字转拼音 pinyin4j 与 hanziTopinyin</span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="font-size:14px">4 AACPlayer</span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="font-size:14px">5 GSON json框架 fastjson</span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="font-size:14px">6 Otto&nbsp;<span style="color:rgb(51,51,51); font-family:&#39;DejaVu Sans Condensed&#39;,Helvetica,Tahoma,Arial,sans-serif,宋体; line-height:24px">是Android系统的一个Event
+ Bus模式</span><span style="color:rgb(51,51,51); font-family:&#39;DejaVu Sans Condensed&#39;,Helvetica,Tahoma,Arial,sans-serif,宋体; line-height:24px">类库。用来简化应用组件间</span><span style="color:rgb(51,51,51); font-family:&#39;DejaVu Sans Condensed&#39;,Helvetica,Tahoma,Arial,sans-serif,宋体; line-height:24px">的</span><span style="color:rgb(51,51,51); font-family:&#39;DejaVu Sans Condensed&#39;,Helvetica,Tahoma,Arial,sans-serif,宋体; line-height:24px">通信。</span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="color:rgb(51,51,51); font-family:&#39;DejaVu Sans Condensed&#39;,Helvetica,Tahoma,Arial,sans-serif,宋体; line-height:24px"><span style="font-size:14px">7&nbsp;afinal框架是一个<span style="color:rgb(51,51,51); font-family:arial; line-height:20px">开源的</span><span style="color:rgb(51,51,51); font-family:arial; line-height:20px">android的orm和ioc应用开发框架</span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="color:rgb(51,51,51); font-family:&#39;DejaVu Sans Condensed&#39;,Helvetica,Tahoma,Arial,sans-serif,宋体; line-height:24px"><span style="color:rgb(51,51,51); font-family:arial; line-height:20px"><span style="font-size:14px">8&nbsp;<span style="color:rgb(51,51,51); font-family:微软雅黑,Verdana,sans-serif,宋体; letter-spacing:0.5px; line-height:23px">xUtils<span style="color:rgb(51,51,51); font-family:Verdana,sans-serif,宋体; letter-spacing:1px; line-height:25px">&nbsp;源于Afinal框架&nbsp;<span style="color:rgb(51,51,51); font-family:微软雅黑,Verdana,sans-serif,宋体; line-height:23px">对Afinal进行了大量重构，使得xUtils支持大文件上传，更全面的http请求协议支持</span></span></span></span></span></span></span></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="color:rgb(51,51,51); font-family:&#39;DejaVu Sans Condensed&#39;,Helvetica,Tahoma,Arial,sans-serif,宋体; line-height:24px"><span style="color:rgb(51,51,51); font-family:arial; line-height:20px"><span style="color:rgb(51,51,51); font-family:微软雅黑,Verdana,sans-serif,宋体; letter-spacing:0.5px; line-height:23px"><span style="color:rgb(51,51,51); font-family:Verdana,sans-serif,宋体; letter-spacing:1px; line-height:25px"><span style="color:rgb(51,51,51); font-family:微软雅黑,Verdana,sans-serif,宋体; line-height:23px"><span style="font-size:14px">9&nbsp;dom4j
+ &nbsp;XML解析器</span></span></span></span></span></span></span></span></span></p>
+<p><span style="font-size:14px"><span style="font-family:Arial; color:rgb(51,51,51)"><span style="line-height:25.980113983154297px"><span style="line-height:25.98958396911621px"><span style="color:rgb(51,51,51); font-family:&#39;DejaVu Sans Condensed&#39;,Helvetica,Tahoma,Arial,sans-serif,宋体; line-height:24px"><span style="color:rgb(51,51,51); font-family:arial; line-height:20px"><span style="color:rgb(51,51,51); font-family:微软雅黑,Verdana,sans-serif,宋体; letter-spacing:0.5px; line-height:23px"><span style="color:rgb(51,51,51); font-family:Verdana,sans-serif,宋体; letter-spacing:1px; line-height:25px"><span style="color:rgb(51,51,51); font-family:微软雅黑,Verdana,sans-serif,宋体; line-height:23px">10&nbsp;</span></span></span></span></span></span></span></span><span style="font-family:Arial; line-height:1.5em; color:rgb(51,51,51); letter-spacing:1px"><a target="_blank" href="http://blog.csdn.net/jamesmf/article/details/7769730">VTD-XML&nbsp;</a></span><span style="font-family:Arial; color:rgb(51,51,51); letter-spacing:1px; line-height:25.1875px">一种无提取的XML解析方法&nbsp;<a target="_blank" href="http://my.oschina.net/u/1171837/blog/147544">http://my.oschina.net/u/1171837/blog/147544</a>&nbsp;<a target="_blank" href="http://sourceforge.net/projects/vtd-xml/files/vtd-xml/">下载</a></span></span></p>
+<p><span style="font-size:14px">11 android XMPP推送&nbsp;<a target="_blank" href="http://sourceforge.net/projects/androidpn/files/">下载</a></span></p>
+<p><span style="font-size:14px">12&nbsp;jsoup<span style="font-family:微软雅黑,Verdana,sans-serif,宋体; line-height:22px">网络爬虫</span></span></p>
+<p><span style="font-family:微软雅黑,Verdana,sans-serif,宋体; line-height:22px"><span style="font-size:14px">13 acra&nbsp;<span style="text-decoration:none; font-family:&#39;Microsoft YaHei&#39;; line-height:30px"><a target="_blank" href="http://blog.csdn.net/moruite/article/details/7397000" style="text-decoration:none; font-family:&#39;Microsoft YaHei&#39;; line-height:30px">定制化Android
+ crash上报库及后台系统</a></span></span></span></p>
+<p><span style="font-family:微软雅黑,Verdana,sans-serif,宋体; line-height:22px"><span style="font-size:14px">14 VLC 视频聊天</span></span></p>
+<p><span style="font-family:微软雅黑,Verdana,sans-serif,宋体; line-height:22px"><span style="font-size:14px">16&nbsp;SPydroid&nbsp;<a target="_blank" href="http://blog.csdn.net/xiaoliouc/article/details/8493161">http://blog.csdn.net/xiaoliouc/article/details/8493161</a></span></span></p>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="font-size:14px"><span style="line-height:25.980113983154297px"></span></span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px; word-wrap:break-word; color:rgb(68,68,68); font-family:Tahoma,&#39;Microsoft Yahei&#39;,Simsun; line-height:24px">
+</p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px; word-wrap:break-word; color:rgb(68,68,68); font-family:Tahoma,&#39;Microsoft Yahei&#39;,Simsun; line-height:24px">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px">项目篇：</span></span></span></p>
+<ul style="word-wrap:break-word; margin:0px 0px 0px 14px; padding:0px; color:rgb(68,68,68); font-family:Tahoma,&#39;Microsoft Yahei&#39;,Simsun; line-height:19.09090805053711px">
+<li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/Splitter/android_packages_apps_apolloMod" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">Apollo音乐播放器</a></span>：就一个播放器，但是实现的很好</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/oschina/android-app" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">oschina客户端</a></span>：oschina网站的客户端哦，wp版，iOS版都有开源</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/redsolution/xabber-android" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">xabber实时聊天工具（基于xmpp协议）</a></span>：不评价了，反正算是同类中比较好的了</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/qii/weiciyuan" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">四次元新浪微博客户端</a></span>：今天才知道是开源的，赶紧收藏</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://code.google.com/p/iosched/" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">Google
+ IO</a></span>：谷歌开发者大会应用，虽然有点难懂，还是很有参考价值（比如其中的图片加载）</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/eoecn/android-app/" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">eoe客户端</a></span>：eoe网站Android客户端也开源咯</span></span></span></li></ul>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px; word-wrap:break-word; color:rgb(68,68,68); font-family:Tahoma,&#39;Microsoft Yahei&#39;,Simsun; line-height:24px">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px">组件篇：</span></span></span></p>
+<ul style="word-wrap:break-word; margin:0px 0px 0px 14px; padding:0px; color:rgb(68,68,68); font-family:Tahoma,&#39;Microsoft Yahei&#39;,Simsun; line-height:19.09090805053711px">
+<li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/openaphid/android-flip" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">Android-Flip</a></span>：可以实现类似FlipBoard那种华丽丽的翻页</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/bauerca/drag-sort-listview" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">Drag-Sort-Listview</a></span>：可以拖动item重新排序的listview，效果非常赞</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/Prototik/HoloEverywhere" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">HoloEveryWhere</a></span>：咳咳，有些同学非常喜欢Android的holo风格，这个项目绝对让你happy</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/tisa007/Android-Universal-Image-Loader" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">Universal-ImageLoader</a></span>：这个经典的异步图片加载，不多说了</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/jfeinstein10/JazzyViewPager" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">JazzyViewPager</a></span>：这玩意可以让ViewPager翻起来更酷，谁用谁知道~~</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/jfeinstein10/SlidingMenu" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">SlidingMenu</a></span>：这个是抽屉界面（就是facebook那种）的各种实现版本中，最好的，木有之一！</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/emilsjolander/StickyListHeaders" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">StickyListHeaders</a></span>：iPhone上经常有这个，就是listview的……不知道怎么解释，自己下载看看吧</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/chrisbanes/Android-PullToRefresh" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">Android-PullToRefresh</a></span>：下拉刷新，挺常用的一个组件</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/maurycyw/StaggeredGridView" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">StaggeredGridView</a></span>：这是一个瀑布流布局的实现，还不是很完善，但作为学习的案例或者在其基础上扩展还是不错的</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/loopj/android-async-http" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">android-async-http</a></span>：android的异步请求组件，我个人习惯使用asynctask，不过这个实现还是很优秀的，也推荐给大家</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/JakeWharton/ActionBarSherlock?source=cr" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">ActionBarSherlock</a></span>：大家熟知的ActionBar在2.x上的兼容性方案；类似的兼容性组件还有许多，有时间为大家一一列出；</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/facebook/facebook-android-sdk/" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">facebook-android-sdk</a></span>：不止是一个SDK那么简单哦，比某浪和某人的SDK强几个数量级；</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/JakeWharton/NineOldAndroids" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">NineOldAndroids</a></span>：想在2.xSDK上使用Android
+ 3.0新增的动画API，那就是它了；没用过的同学一定要试试哦，非常方便~</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/47deg/android-swipelistview" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">android-swipelistview</a></span>：让listview的item可以向右滑动，新版Gmail和Pocket里面有用到哦~</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/foxykeep/DataDroid" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">DataDroid</a></span>：Android的RESTful封装，没听过RESTful？你去死吧</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/greenrobot/EventBus" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">EventBus</a></span>：和上面的DataDroid同样属于美化底层代码的，这个lib简化了不同组件之间的事件传递</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/BoD/android-switch-backport" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">android-switch-backport</a></span>：Android3.0以上才有的switch，有好心人给迁移到2.x上了，哈</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/astuetz/PagerSlidingTabStrip" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">PagerSlidingTabStrip</a></span>：最新版的GooglePlay的那个tab效果，可炫可炫了</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/pwnall/chromeview" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">chromeview</a></span>：我们都知道webview，也知道Android的chrome又自己的内核，这个项目就是把chrome的内核给导出来做成一个chromeview了，大家可以在自己的项目里用，有兴趣的可以玩玩</span></span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="word-wrap:break-word"><span style="font-size:14px"><a target="_blank" href="https://github.com/square/picasso" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">picasso</a>：来自square的图片异步加载，好像是最近才开源的，API风格很独特</span></span></span></li></ul>
+<span style="font-size:14px">网站篇：</span>
+<p><span style="font-family:Arial; color:rgb(51,51,51)"><span style="font-size:14px"><span style="line-height:25.980113983154297px"></span></span></span></p>
+<ul style="word-wrap:break-word; margin:0px 0px 0px 14px; padding:0px; color:rgb(68,68,68); font-family:Tahoma,&#39;Microsoft Yahei&#39;,Simsun; line-height:21px">
+<li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="https://github.com/" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">github</a></span>：各种项目很多，就是不容易挖掘，但是开发者必备</span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="http://www.oschina.net/" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">oschina</a></span>：曾经一般，现在越做越好了，很多开源项目；</span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="http://www.eoe.cn/code/android.html" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">eoeandroid</a></span>：经过一番整理，现在非常强大；小作品居多；</span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="font-size:14px"><span style="word-wrap:break-word; color:rgb(33,117,155)"><a target="_blank" href="http://www.androidviews.net/" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">AndroidViews</a></span>：我曾经想做这么一个网站来着，很多开源组件的集合</span></span></li><li style="word-wrap:break-word; margin:0px 0px 0px 2em; padding:0px; list-style:disc">
+<span style="font-family:微软雅黑; word-wrap:break-word"><span style="font-size:14px"><a target="_blank" href="http://blog.tisa7.com/" style="color:rgb(51,102,153); text-decoration:initial; word-wrap:break-word">爬爬的博客</a>：</span></span></li></ul>
+<span style="font-size:14px"><br>
+</span>
+<p><span style="font-size:14px">图片处理框架：</span></p>
+<p><span style="font-size:14px"><span style="white-space:pre"></span>图片模糊处理：<a target="_blank" href="https://github.com/kikoso/android-stackblur"><span class="final-path" style="font-family:Helvetica,arial,freesans,clean,sans-serif; line-height:25px; orphans:2; widows:2">StackBlur</span><span class="separator" style="color:rgb(153,153,153); font-family:Helvetica,arial,freesans,clean,sans-serif; line-height:25px; orphans:2; widows:2">&nbsp;</span></a></span></p>
+<p>PDF框架： IText &nbsp;MuPDF &nbsp;<a target="_blank" href="https://github.com/karanbalkar/AndroidPDFDemo">droidtext &nbsp;</a>com/sun/pdfview &nbsp;<span style="color:rgb(85,85,85); font-family:Consolas,&#39;Liberation Mono&#39;,Menlo,Courier,monospace; line-height:16px; white-space:pre">com.lowagie.text(<a target="_blank" href="http://www.docjar.com/projects/iText-2.1.7-code.html" style="font-family:Simsun; font-size:14px">iText-2.1.7</a>)</span></p>
+<h2 style="margin:0px; padding:0px; color:rgb(51,51,51); font-family:Arial; line-height:26px">
+<br>
+</h2>
+<p></p>
+<p><br>
+</p>
+<p><br>
+</p>
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+<div class="bdsharebuttonbox bdshare-button-style0-16" style="float: right;" data-bd-bind="1430814849682">
+<a href="http://blog.csdn.net/stephen255/article/details/9121583#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="http://blog.csdn.net/stephen255/article/details/9121583#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" style="background-position:0 -52px !important"></a>
+<a href="http://blog.csdn.net/stephen255/article/details/9121583#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博" style="background-position:0 -104px !important"></a>
+<a href="http://blog.csdn.net/stephen255/article/details/9121583#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博" style="background-position:0 -260px !important"></a>
+<a href="http://blog.csdn.net/stephen255/article/details/9121583#" class="bds_renren" data-cmd="renren" title="分享到人人网" style="background-position:0 -208px !important"></a>
+<a href="http://blog.csdn.net/stephen255/article/details/9121583#" class="bds_weixin" data-cmd="weixin" title="分享到微信" style="background-position:0 -1612px !important"></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+<!--192.168.100.35-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shangyipian&#39;]);location.href=&#39;/stephen255/article/details/9056361&#39;;">上一篇</span><a href="http://blog.csdn.net/stephen255/article/details/9056361" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shangyipian&#39;])">获得android手机的CPU核心数</a></li>
+            <li class="next_article"><span onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_xiayipian&#39;]);location.href=&#39;/stephen255/article/details/9142923&#39;;">下一篇</span><a href="http://blog.csdn.net/stephen255/article/details/9142923" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_xiayipian&#39;])">android权限</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/bds_s_v2.js"></script>
+
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+
+</div>
+      <dl class="blog-associat-tag">
+        <dt>主题推荐</dt>
+        <dd>
+                <a href="http://www.csdn.net/tag/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE" target="_blank" class="blog-tage-red">开源项目</a> 
+                <a href="http://www.csdn.net/tag/android" target="_blank" class="blog-tage-red">android</a> 
+                <a href="http://www.csdn.net/tag/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A" target="_blank" class="blog-tage-red">新浪微博</a> 
+                <a href="http://www.csdn.net/tag/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86" target="_blank" class="blog-tage-red">图片处理</a> 
+                <a href="http://www.csdn.net/tag/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB" target="_blank" class="blog-tage-red">网络爬虫</a> 
+        </dd>
+    </dl> 
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(../images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+
+</style>
+
+<dl class="blog-ass-articl tracking-ad" data-mod="popu_36" id="res-relatived" style="height:  160px;"> 
+     <dt><span>猜你在找</span></dt>    
+
+     <div id="res" style="width: 42%;float: left;margin-right: 30px;"><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/yangyu20121224/article/details/9122517" title="Android UI设计与开发第15期顶部标题栏六实现悬浮式顶部和底部标题栏效果" strategy="CFRecommendAlgorithm" target="_blank">Android UI设计与开发第15期顶部标题栏六实现悬浮式顶部和底部标题栏效果</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/Simdanfeg/article/details/9011603" title="Android支付接入一支付宝" strategy="CFRecommendAlgorithm" target="_blank">Android支付接入一支付宝</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/jdsjlzx/article/details/7553987" title="Android提高篇之自定义dialog实现processDialog正在加载效果使用Animation实现图片旋转" strategy="CFRecommendAlgorithm" target="_blank">Android提高篇之自定义dialog实现processDialog正在加载效果使用Animation实现图片旋转</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/rosenluo/article/details/40891245" title="分享45个android实例源码很好很强大收藏吧" strategy="CFRecommendAlgorithm" target="_blank">分享45个android实例源码很好很强大收藏吧</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/bz419927089/article/details/40186079" title="Android界面实现带有指示器的自定义底部导航栏的实现" strategy="CFRecommendAlgorithm" target="_blank">Android界面实现带有指示器的自定义底部导航栏的实现</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/zhyl8157121/article/details/7705278" title="Android设置无标题窗口" strategy="CFRecommendAlgorithm" target="_blank">Android设置无标题窗口</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/voluptas/article/details/6339855" title="见过最好的git入门教程" strategy="CFRecommendAlgorithm" target="_blank">见过最好的git入门教程</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/nie312122330/article/details/17993403" title="android仿win8 metro磁贴布局" strategy="CFRecommendAlgorithm" target="_blank">android仿win8 metro磁贴布局</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/mad1989/article/details/25071957" title="Android通过RuntimegetRuntimeexec实现Ping和Traceroute命令时readLine阻塞问题解决" strategy="CFRecommendAlgorithm" target="_blank">Android通过RuntimegetRuntimeexec实现Ping和Traceroute命令时readLine阻塞问题解决</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="http://blog.csdn.net/kymjs/article/details/40677345" title="Android插件化开发初入殿堂" strategy="CFRecommendAlgorithm" target="_blank">Android插件化开发初入殿堂</a></dd></div>
+
+    <div id="adCollege" style="width: 42%;float: left;">
+            <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;">
+                <a href="http://edu.csdn.net/combo/detail/29" title="【精品课程】Spark+Scala套餐值不值，看你敢不敢学！" strategy="SearchAlgorithm" target="_blank">【精品课程】Spark+Scala套餐值不值，看你敢不敢学！</a></dd>
+            <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;">
+                <a href="http://edu.csdn.net/course/detail/743" title="【精品课程】libGDX项目实战——2048" strategy="SearchAlgorithm" target="_blank">【精品课程】libGDX项目实战——2048</a></dd>
+            <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;">
+                <a href="http://edu.csdn.net/course/detail/701" title="【精品课程】系统集成项目管理工程师-基础精讲班-第06集项目整体管理" strategy="SearchAlgorithm" target="_blank">【精品课程】系统集成项目管理工程师-基础精讲班-第06集项目整体管理</a></dd>
+            <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;">
+                <a href="http://edu.csdn.net/course/detail/688" title="【精品课程】Python开发实战（第二季）" strategy="SearchAlgorithm" target="_blank">【精品课程】Python开发实战（第二季）</a></dd>
+            <dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;">
+                <a href="http://edu.csdn.net/course/detail/686" title="【精品课程】Java Web进阶开发" strategy="SearchAlgorithm" target="_blank">【精品课程】Java Web进阶开发</a></dd>
+    </div>
+   
+</dl>
+
+
+<div id="job_blog_reco"><dl class="blog-ass-articl tracking-ad" data-mod="popu_72"><dt><span>准备好了么？&nbsp;<label class="po_blg_detail_tiao">跳</label><label class="po_blg_detail_ba">吧</label><label class="po_blg_detail_th">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;！</label></span><a href="http://job.csdn.net/" target="_blank" class="po_blg_more">更多职位尽在&nbsp;<label class="po_blg_detail_csdn">CSDN JOB</label></a></dt><dd class="po_blg_dd"><div class="po_blg_po"><a href="http://job.csdn.net/Job/Index?jobID=86406" title="Delphi软件工程师" strategy="PersonalRecommend" target="_blank">Delphi软件工程师</a></div><div class="po_blg_company"><a href="http://pr.csdn.net/enterprise/ent_home?orgid=309749" title="北京开卷信息技术有限公司" target="_blank">北京开卷信息技术有限公司</a></div><label class="po_blg_separator">|</label><div class="po_blg_salary"><a href="http://job.csdn.net/Job/Index?jobID=86406" target="_blank">10-18K/月</a></div><a class="po_blg_iwant" href="http://job.csdn.net/Job/Index?jobID=86406" target="_blank">我要跳槽</a></dd><dd class="po_blg_dd"><div class="po_blg_po"><a href="http://job.csdn.net/Job/Index?jobID=87167" title="HTML5游戏开发工程师" strategy="PersonalRecommend" target="_blank">HTML5游戏开发工程师</a></div><div class="po_blg_company"><a href="http://pr.csdn.net/enterprise/ent_home?orgid=411912" title="北京爱视游科技文化有限公司" target="_blank">北京爱视游科技文化有限公司</a></div><label class="po_blg_separator">|</label><div class="po_blg_salary"><a href="http://job.csdn.net/Job/Index?jobID=87167" target="_blank">10-15K/月</a></div><a class="po_blg_iwant" href="http://job.csdn.net/Job/Index?jobID=87167" target="_blank">我要跳槽</a></dd><dd class="po_blg_dd"><div class="po_blg_po"><a href="http://job.csdn.net/Job/Index?jobID=87656" title="前端开发工程师HTML5" strategy="PersonalRecommend" target="_blank">前端开发工程师HTML5</a></div><div class="po_blg_company"><a href="http://pr.csdn.net/enterprise/ent_home?orgid=436563" title="北京酷语时代教育科技有限公司" target="_blank">北京酷语时代教育科技有限公司</a></div><label class="po_blg_separator">|</label><div class="po_blg_salary"><a href="http://job.csdn.net/Job/Index?jobID=87656" target="_blank">8-12K/月</a></div><a class="po_blg_iwant" href="http://job.csdn.net/Job/Index?jobID=87656" target="_blank">我要跳槽</a></dd><dd class="po_blg_dd"><div class="po_blg_po"><a href="http://job.csdn.net/Job/Index?jobID=87457" title="HTML 5高级开发工程师" strategy="PersonalRecommend" target="_blank">HTML 5高级开发工程师</a></div><div class="po_blg_company"><a href="http://pr.csdn.net/enterprise/ent_home?orgid=412357" title="江苏乐博国际投资发展有限公司" target="_blank">江苏乐博国际投资发展有限公司</a></div><label class="po_blg_separator">|</label><div class="po_blg_salary"><a href="http://job.csdn.net/Job/Index?jobID=87457" target="_blank">10-15K/月</a></div><a class="po_blg_iwant" href="http://job.csdn.net/Job/Index?jobID=87457" target="_blank">我要跳槽</a></dd></dl></div>
+
+<script type="text/javascript">
+    var searchtitletags = 'android开源项目和框架' + ',' + '开源项目,android,新浪微博,图片处理,网络爬虫';
+    searchService({
+        index: 'blog',
+        query: searchtitletags,
+        from: 5,
+        size: 5,
+        appendTo: '#res',
+        url: 'recommend',
+        his: 2,
+        client: "blog_cf_enhance",
+        tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+    });
+
+ </script>   
+
+
+
+    <div id="ad_cen">
+   
+          <script type="text/javascript">
+              new Ad(4, 'ad_cen');
+          </script>
+    <iframe id="ad_frm_0" frameborder="0" scrolling="no" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ad(1).html" style="border-width: 0px; overflow: hidden; width: 738px; height: 90px;"></iframe></div>
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list"><dl class="comment_item comment_topic" id="comment_item_4513755"><dt class="comment_head" floor="15">15楼 <span class="user"><a class="username" href="http://blog.csdn.net/lowprofile_coding" target="_blank">lowprofile_coding</a> <span class="ptime">2014-11-13 18:23发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4513755" username="lowprofile_coding"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/lowprofile_coding" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_lowprofile_coding.jpg" width="40" height="40"></a></dd><dd class="comment_body">make</dd></dl><dl class="comment_item comment_topic" id="comment_item_4487785"><dt class="comment_head" floor="14">14楼 <span class="user"><a class="username" href="http://blog.csdn.net/finddreams" target="_blank">finddreams</a> <span class="ptime">2014-11-05 14:27发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4487785" username="finddreams"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/finddreams" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_finddreams.jpg" width="40" height="40"></a></dd><dd class="comment_body">很好的收藏，慢慢学习吧！http://blog.csdn.net/finddreams</dd></dl><dl class="comment_item comment_topic" id="comment_item_4430455"><dt class="comment_head" floor="13">13楼 <span class="user"><a class="username" href="http://blog.csdn.net/iplayvs2008" target="_blank">阿瞒多狡黠</a> <span class="ptime">2014-10-23 22:35发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4430455" username="iplayvs2008"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/iplayvs2008" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_iplayvs2008.jpg" width="40" height="40"></a></dd><dd class="comment_body">默默问下怎么mark?</dd></dl><dl class="comment_item comment_topic" id="comment_item_4341771"><dt class="comment_head" floor="12">12楼 <span class="user"><a class="username" href="http://blog.csdn.net/ObjectMan0" target="_blank">ObjectMan0</a> <span class="ptime">2014-09-29 14:37发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4341771" username="ObjectMan0"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/ObjectMan0" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_objectman0.jpg" width="40" height="40"></a></dd><dd class="comment_body">mark</dd></dl><dl class="comment_item comment_topic" id="comment_item_4221285"><dt class="comment_head" floor="11">11楼 <span class="user"><a class="username" href="http://blog.csdn.net/u012548992" target="_blank">菇凉你别跑</a> <span class="ptime">2014-08-28 15:13发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4221285" username="u012548992"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u012548992" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_u012548992.jpg" width="40" height="40"></a></dd><dd class="comment_body">给力,mark</dd></dl><dl class="comment_item comment_topic" id="comment_item_4220383"><dt class="comment_head" floor="10">10楼 <span class="user"><a class="username" href="http://blog.csdn.net/a62203571" target="_blank">a62203571</a> <span class="ptime">2014-08-28 11:38发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4220383" username="a62203571"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/a62203571" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_a62203571.jpg" width="40" height="40"></a></dd><dd class="comment_body">mark!</dd></dl><dl class="comment_item comment_topic" id="comment_item_4212359"><dt class="comment_head" floor="9">9楼 <span class="user"><a class="username" href="http://blog.csdn.net/nbboy_net2" target="_blank">nbboy_net2</a> <span class="ptime">2014-08-26 09:52发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4212359" username="nbboy_net2"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/nbboy_net2" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_nbboy_net2.jpg" width="40" height="40"></a></dd><dd class="comment_body">mark</dd></dl><dl class="comment_item comment_topic" id="comment_item_4101473"><dt class="comment_head" floor="8">8楼 <span class="user"><a class="username" href="http://blog.csdn.net/fallencity2011" target="_blank">夏天的小虫</a> <span class="ptime">2014-07-30 10:38发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4101473" username="fallencity2011"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/fallencity2011" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_fallencity2011.jpg" width="40" height="40"></a></dd><dd class="comment_body">mark收藏</dd></dl><dl class="comment_item comment_topic" id="comment_item_4066067"><dt class="comment_head" floor="7">7楼 <span class="user"><a class="username" href="http://blog.csdn.net/l416112167" target="_blank">小吕-ICE</a> <span class="ptime">2014-07-19 18:25发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4066067" username="l416112167"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/l416112167" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_l416112167.jpg" width="40" height="40"></a></dd><dd class="comment_body">楼主有心人、大赞一个</dd></dl><dl class="comment_item comment_topic" id="comment_item_3838977"><dt class="comment_head" floor="6">6楼 <span class="user"><a class="username" href="http://blog.csdn.net/A189lin" target="_blank">低調的小爺</a> <span class="ptime">2014-05-14 14:11发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3838977" username="A189lin"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/A189lin" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_a189lin.jpg" width="40" height="40"></a></dd><dd class="comment_body">不错不错</dd></dl><dl class="comment_item comment_topic" id="comment_item_3597277"><dt class="comment_head" floor="5">5楼 <span class="user"><a class="username" href="http://blog.csdn.net/xiangxue336" target="_blank">xiangxue336</a> <span class="ptime">2014-03-17 10:24发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3597277" username="xiangxue336"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/xiangxue336" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_xiangxue336.jpg" width="40" height="40"></a></dd><dd class="comment_body">好东西</dd></dl><dl class="comment_item comment_topic" id="comment_item_3498585"><dt class="comment_head" floor="4">4楼 <span class="user"><a class="username" href="http://blog.csdn.net/zzzqqq111222" target="_blank">zzzqqq111222</a> <span class="ptime">2014-02-20 10:22发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3498585" username="zzzqqq111222"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/zzzqqq111222" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_zzzqqq111222.jpg" width="40" height="40"></a></dd><dd class="comment_body">高手 我要告诉别人</dd></dl><dl class="comment_item comment_topic" id="comment_item_3251071"><dt class="comment_head" floor="3">3楼 <span class="user"><a class="username" href="http://blog.csdn.net/kun1308168984" target="_blank">kun1308168984</a> <span class="ptime">2013-12-05 16:05发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3251071" username="kun1308168984"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/kun1308168984" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_kun1308168984.jpg" width="40" height="40"></a></dd><dd class="comment_body">给力啊</dd></dl><dl class="comment_item comment_topic" id="comment_item_3148445"><dt class="comment_head" floor="2">2楼 <span class="user"><a class="username" href="http://blog.csdn.net/kellyZeroNine" target="_blank">kellyZeroNine</a> <span class="ptime">2013-11-15 10:18发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3148445" username="kellyZeroNine"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/kellyZeroNine" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_kellyzeronine.jpg" width="40" height="40"></a></dd><dd class="comment_body">厉害</dd></dl><dl class="comment_item comment_topic" id="comment_item_2922733"><dt class="comment_head" floor="1">1楼 <span class="user"><a class="username" href="http://blog.csdn.net/yangchangshu" target="_blank">yangchangshu</a> <span class="ptime">2013-09-17 09:43发表</span>  <a href="http://blog.csdn.net/stephen255/article/details/9121583#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="2922733" username="yangchangshu"> <a href="http://blog.csdn.net/stephen255/article/details/9121583#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="http://blog.csdn.net/stephen255/article/details/9121583#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/yangchangshu" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/3_yangchangshu.jpg" width="40" height="40"></a></dd><dd class="comment_body">楼主神人啊</dd></dl><div class="clear"></div></div>
+    <div id="comment_bar" style="display: none;">
+    </div>
+    <div id="comment_form"><a name="commentbox"></a><a name="reply"></a><a name="quote"></a><form action="http://blog.csdn.net/stephen255/comment/submit?id=9121583" method="post" onsubmit="return subform(this);"><div class="commentform"><div class="panel_head">发表评论</div><ul><li class="left">用 户 名：</li><li class="right">adougangan</li></ul><ul><li class="left">评论内容：</li><li class="right" style="position:relative;"><div id="ubbtools"><a href="http://blog.csdn.net/stephen255/article/details/9121583#insertcode" code="code"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/code.gif" border="0" alt="插入代码" title="插入代码"></a></div><div id="lang_list" style="position: absolute; top: 28px; left: 0px; display: none;"><a class="long_name" href="http://blog.csdn.net/stephen255/article/details/9121583#html">HTML/XML</a><a class="long_name" href="http://blog.csdn.net/stephen255/article/details/9121583#objc">objective-c</a><a class="zhong_name" href="http://blog.csdn.net/stephen255/article/details/9121583#delphi">Delphi</a><a class="zhong_name" href="http://blog.csdn.net/stephen255/article/details/9121583#ruby">Ruby</a><a href="http://blog.csdn.net/stephen255/article/details/9121583#php">PHP</a><a class="duan_name" href="http://blog.csdn.net/stephen255/article/details/9121583#csharp">C#</a><a style=" border-right: none;" class="duan_name" href="http://blog.csdn.net/stephen255/article/details/9121583#cpp">C++</a><a style=" border-bottom:none;" class="long_name" href="http://blog.csdn.net/stephen255/article/details/9121583#javascript">JavaScript</a><a style=" border-bottom:none;" class="long_name" href="http://blog.csdn.net/stephen255/article/details/9121583#vb">Visual Basic</a><a style=" border-bottom:none;" class="zhong_name" href="http://blog.csdn.net/stephen255/article/details/9121583#python">Python</a><a style=" border-bottom:none;" class="zhong_name" href="http://blog.csdn.net/stephen255/article/details/9121583#java">Java</a><a style="border-bottom:none;" class="duan_name" href="http://blog.csdn.net/stephen255/article/details/9121583#css">CSS</a><a style="border-bottom:none;" class="duan_name" href="http://blog.csdn.net/stephen255/article/details/9121583#sql">SQL</a><a style="border:none;" class="duan_name" href="http://blog.csdn.net/stephen255/article/details/9121583#plain">其它</a></div><textarea class="comment_content" name="comment_content" id="comment_content" style="width: 400px; height: 200px;"></textarea></li></ul><ul><input type="hidden" id="comment_replyId" name="comment_replyId"><input type="hidden" id="comment_userId" name="comment_userId" value="521203"><input type="hidden" id="commentId" name="commentId" value=""><input type="submit" class="comment_btn" value="提交">&nbsp;&nbsp;<span id="tip_comment" style="color: Red; display: none;"></span></ul></div></form></div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '9121583';
+    var commentscount = 15;
+    var islock = false
+</script>
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/comment.js"></script>
+    <div id="ad_bot">
+    <iframe id="ad_frm_1" frameborder="0" scrolling="no" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ad(2).html" style="border-width: 0px; overflow: hidden; width: 738px; height: 0px;"></iframe></div>
+    <script type="text/javascript">
+    new Ad(5, 'ad_bot');
+    </script>
+<div id="report_dialog">
+</div>
+
+<div id="d-top" style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop" style="display: none;" title="返回顶部" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_huidaodingbu&#39;])">         
+         <img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);
+        
+        /*
+        if($("#comment_content").length>0)
+        {
+            $("#quick-reply").show();
+
+            $("#quick-reply").click(function(){
+                setEditorFocus();
+            });
+        }       
+     
+        var d_top = $('#d-top-a');
+
+        document.onscroll = function ()
+        {
+            var scrTop = (document.body.scrollTop || document.documentElement.scrollTop);
+            if (scrTop > 500)
+            {
+                d_top.show();
+            } else
+            {
+                d_top.hide();
+            }
+        }
+        $('#d-top-a').click(function ()
+        {
+            scrollTo(0, 0);
+            this.blur();
+            return false;
+        });
+        */
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+<div class="tag_list">
+    <h5>
+        <a href="http://www.csdn.net/tag/" target="_blank">核心技术类目</a></h5>
+    <div class="classify">
+<a title="全部主题" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,336);">全部主题</a>
+<a title="Hadoop" href="http://g.csdn.net/5272865" target="_blank" onclick="LogClickCount(this,336);">Hadoop</a>
+<a title="AWS" href="http://g.csdn.net/5272866" target="_blank" onclick="LogClickCount(this,336);">AWS</a>
+<a title="移动游戏" href="http://g.csdn.net/5272870" target="_blank" onclick="LogClickCount(this,336);">移动游戏</a>
+<a title="Java" href="http://g.csdn.net/5272871" target="_blank" onclick="LogClickCount(this,336);">Java</a>
+<a title="Android" href="http://g.csdn.net/5272872" target="_blank" onclick="LogClickCount(this,336);">Android</a>
+<a title="iOS" href="http://g.csdn.net/5272873" target="_blank" onclick="LogClickCount(this,336);">iOS</a>
+<a title="Swift" href="http://g.csdn.net/5272868" target="_blank" onclick="LogClickCount(this,336);">Swift</a>
+<a title="智能硬件" href="http://g.csdn.net/5272869" target="_blank" onclick="LogClickCount(this,336);">智能硬件</a>
+<a title="Docker" href="http://g.csdn.net/5272867" target="_blank" onclick="LogClickCount(this,336);">Docker</a>
+<a title="OpenStack" href="http://g.csdn.net/5272925" target="_blank" onclick="LogClickCount(this,336);">OpenStack</a>
+<a title="VPN" href="http://www.csdn.net/tag/vpn" target="_blank" onclick="LogClickCount(this,336);">VPN</a>
+<a title="Spark" href="http://g.csdn.net/5272924" target="_blank" onclick="LogClickCount(this,336);">Spark</a>
+<a title="ERP" href="http://www.csdn.net/tag/erp" target="_blank" onclick="LogClickCount(this,336);">ERP</a>
+<a title="IE10" href="http://www.csdn.net/tag/ie10" target="_blank" onclick="LogClickCount(this,336);">IE10</a>
+<a title="Eclipse" href="http://www.csdn.net/tag/eclipse" target="_blank" onclick="LogClickCount(this,336);">Eclipse</a>
+<a title="CRM" href="http://www.csdn.net/tag/crm" target="_blank" onclick="LogClickCount(this,336);">CRM</a>
+<a title="JavaScript" href="http://www.csdn.net/tag/javascript" target="_blank" onclick="LogClickCount(this,336);">JavaScript</a>
+<a title="数据库" href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" onclick="LogClickCount(this,336);">数据库</a>
+<a title="Ubuntu" href="http://www.csdn.net/tag/ubuntu" target="_blank" onclick="LogClickCount(this,336);">Ubuntu</a>
+<a title="NFC" href="http://www.csdn.net/tag/nfc" target="_blank" onclick="LogClickCount(this,336);">NFC</a>
+<a title="WAP" href="http://www.csdn.net/tag/wap" target="_blank" onclick="LogClickCount(this,336);">WAP</a>
+<a title="jQuery" href="http://www.csdn.net/tag/jquery" target="_blank" onclick="LogClickCount(this,336);">jQuery</a>
+<a title="BI" href="http://www.csdn.net/tag/bi" target="_blank" onclick="LogClickCount(this,336);">BI</a>
+<a title="HTML5" href="http://www.csdn.net/tag/html5" target="_blank" onclick="LogClickCount(this,336);">HTML5</a>
+<a title="Spring" href="http://www.csdn.net/tag/spring" target="_blank" onclick="LogClickCount(this,336);">Spring</a>
+<a title="Apache" href="http://www.csdn.net/tag/apache" target="_blank" onclick="LogClickCount(this,336);">Apache</a>
+<a title=".NET" href="http://www.csdn.net/tag/.net" target="_blank" onclick="LogClickCount(this,336);">.NET</a>
+<a title="API" href="http://www.csdn.net/tag/api" target="_blank" onclick="LogClickCount(this,336);">API</a>
+<a title="HTML" href="http://www.csdn.net/tag/html" target="_blank" onclick="LogClickCount(this,336);">HTML</a>
+<a title="SDK" href="http://www.csdn.net/tag/sdk" target="_blank" onclick="LogClickCount(this,336);">SDK</a>
+<a title="IIS" href="http://www.csdn.net/tag/iis" target="_blank" onclick="LogClickCount(this,336);">IIS</a>
+<a title="Fedora" href="http://www.csdn.net/tag/fedora" target="_blank" onclick="LogClickCount(this,336);">Fedora</a>
+<a title="XML" href="http://www.csdn.net/tag/xml" target="_blank" onclick="LogClickCount(this,336);">XML</a>
+<a title="LBS" href="http://www.csdn.net/tag/lbs" target="_blank" onclick="LogClickCount(this,336);">LBS</a>
+<a title="Unity" href="http://www.csdn.net/tag/unity" target="_blank" onclick="LogClickCount(this,336);">Unity</a>
+<a title="Splashtop" href="http://www.csdn.net/tag/splashtop" target="_blank" onclick="LogClickCount(this,336);">Splashtop</a>
+<a title="UML" href="http://www.csdn.net/tag/uml" target="_blank" onclick="LogClickCount(this,336);">UML</a>
+<a title="components" href="http://www.csdn.net/tag/components" target="_blank" onclick="LogClickCount(this,336);">components</a>
+<a title="Windows Mobile" href="http://www.csdn.net/tag/windowsmobile" target="_blank" onclick="LogClickCount(this,336);">Windows Mobile</a>
+<a title="Rails" href="http://www.csdn.net/tag/rails" target="_blank" onclick="LogClickCount(this,336);">Rails</a>
+<a title="QEMU" href="http://www.csdn.net/tag/qemu" target="_blank" onclick="LogClickCount(this,336);">QEMU</a>
+<a title="KDE" href="http://www.csdn.net/tag/kde" target="_blank" onclick="LogClickCount(this,336);">KDE</a>
+<a title="Cassandra" href="http://www.csdn.net/tag/cassandra" target="_blank" onclick="LogClickCount(this,336);">Cassandra</a>
+<a title="CloudStack" href="http://www.csdn.net/tag/cloudstack" target="_blank" onclick="LogClickCount(this,336);">CloudStack</a>
+<a title="FTC" href="http://www.csdn.net/tag/ftc" target="_blank" onclick="LogClickCount(this,336);">FTC</a>
+<a title="coremail" href="http://www.csdn.net/tag/coremail" target="_blank" onclick="LogClickCount(this,336);">coremail</a>
+<a title="OPhone " href="http://www.csdn.net/tag/ophone" target="_blank" onclick="LogClickCount(this,336);">OPhone </a>
+<a title="CouchBase" href="http://www.csdn.net/tag/couchbase" target="_blank" onclick="LogClickCount(this,336);">CouchBase</a>
+<a title="云计算" href="http://www.csdn.net/tag/%E4%BA%91%E8%AE%A1%E7%AE%97" target="_blank" onclick="LogClickCount(this,336);">云计算</a>
+<a title="iOS6" href="http://www.csdn.net/tag/iOS6" target="_blank" onclick="LogClickCount(this,336);">iOS6</a>
+<a title="Rackspace " href="http://www.csdn.net/tag/rackspace" target="_blank" onclick="LogClickCount(this,336);">Rackspace </a>
+<a title="Web App" href="http://www.csdn.net/tag/webapp" target="_blank" onclick="LogClickCount(this,336);">Web App</a>
+<a title="SpringSide" href="http://www.csdn.net/tag/springside" target="_blank" onclick="LogClickCount(this,336);">SpringSide</a>
+<a title="Maemo" href="http://www.csdn.net/tag/maemo" target="_blank" onclick="LogClickCount(this,336);">Maemo</a>
+<a title="Compuware" href="http://www.csdn.net/tag/compuware" target="_blank" onclick="LogClickCount(this,336);">Compuware</a>
+<a title="大数据" href="http://www.csdn.net/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE" target="_blank" onclick="LogClickCount(this,336);">大数据</a>
+<a title="aptech" href="http://www.csdn.net/tag/aptech" target="_blank" onclick="LogClickCount(this,336);">aptech</a>
+<a title="Perl" href="http://www.csdn.net/tag/perl" target="_blank" onclick="LogClickCount(this,336);">Perl</a>
+<a title="Tornado" href="http://www.csdn.net/tag/tornado" target="_blank" onclick="LogClickCount(this,336);">Tornado</a>
+<a title="Ruby" href="http://www.csdn.net/tag/ruby" target="_blank" onclick="LogClickCount(this,336);">Ruby</a>
+<a title="Hibernate" href="http://www.csdn.net/hibernate" target="_blank" onclick="LogClickCount(this,336);">Hibernate</a>
+<a title="ThinkPHP" href="http://www.csdn.net/tag/thinkphp" target="_blank" onclick="LogClickCount(this,336);">ThinkPHP</a>
+<a title="HBase" href="http://www.csdn.net/tag/hbase" target="_blank" onclick="LogClickCount(this,336);">HBase</a>
+<a title="Pure" href="http://www.csdn.net/tag/pure" target="_blank" onclick="LogClickCount(this,336);">Pure</a>
+<a title="Solr" href="http://www.csdn.net/tag/solr" target="_blank" onclick="LogClickCount(this,336);">Solr</a>
+<a title="Angular" href="http://www.csdn.net/tag/angular" target="_blank" onclick="LogClickCount(this,336);">Angular</a>
+<a title="Cloud Foundry" href="http://www.csdn.net/tag/cloudfoundry" target="_blank" onclick="LogClickCount(this,336);">Cloud Foundry</a>
+<a title="Redis" href="http://www.csdn.net/tag/redis" target="_blank" onclick="LogClickCount(this,336);">Redis</a>
+<a title="Scala" href="http://www.csdn.net/tag/scala" target="_blank" onclick="LogClickCount(this,336);">Scala</a>
+<a title="Django" href="http://www.csdn.net/tag/django" target="_blank" onclick="LogClickCount(this,336);">Django</a>
+<a title="Bootstrap" href="http://www.csdn.net/tag/bootstrap" target="_blank" onclick="LogClickCount(this,336);">Bootstrap</a>
+    </div>
+</div>
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });
+        },200);  
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }    
+
+</script>
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+            <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/stephen255" target="_blank">
+    <img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/1_stephen255.jpg" title="访问我的空间" style="max-width:90%">
+    </a>
+    <br>
+    <span><a href="http://my.csdn.net/stephen255" class="user_name" target="_blank">stephen255</a></span>
+</div>
+<div class="interact">
+<a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_guanzhu&#39;])"></a>
+
+ <a href="javascript:void(0);" class="letter" title="[发私信]" onclick="window.open(&#39;http://msg.csdn.net/letters/model?receiver=stephen255&#39;,&#39;_blank&#39;,&#39;height=350,width=700&#39;);_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_sixin&#39;])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>59217次</span></li>
+    <li>积分：<span>655</span> </li>    
+    <li>等级： <span style="position:relative;display:inline-block;z-index:1">
+            <img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/blog3.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：655 </div>
+        </span>  </li>
+    <li>排名：<span>千里之外</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>12篇</span></li>
+    <li>转载：<span>8篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>20条</span></li>
+</ul>
+</ul>
+</div>
+
+
+
+
+      
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字"></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog">
+        <input type="hidden" name="q" id="inputQ">
+        <input type="hidden" name="t" value="blog">
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script>
+<div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/1464157" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">android基础</a><span>(8)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/1464159" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">c/c++</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/1464163" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">ios</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/1464175" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">struts2 spring ibatis</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/1464177" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">jquery</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/1923127" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">TCP/UDP IP</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/1923129" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">XMPP</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/1923131" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">音视频</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/1923133" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">HTTP</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/1923135" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">web</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/1923139" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">数据库 数据挖掘</a><span>(0)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/2124883" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">ubuntu</a><span>(1)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/2127201" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">框架</a><span>(2)</span>
+            </li>
+             <li>
+                <a href="http://blog.csdn.net/stephen255/article/category/2145239" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_wenzhangfenlei&#39;]); ">sqlite</a><span>(0)</span>
+            </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list"><li><a href="http://blog.csdn.net/stephen255/article/month/2014/07">2014年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/stephen255/article/month/2014/04">2014年04月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/stephen255/article/month/2014/03">2014年03月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/stephen255/article/month/2014/02">2014年02月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/stephen255/article/month/2014/01">2014年01月</a><span>(1)</span></li><span class="hidelist" style="display:none;"><li><a href="http://blog.csdn.net/stephen255/article/month/2013/10">2013年10月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/stephen255/article/month/2013/09">2013年09月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/stephen255/article/month/2013/07">2013年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/stephen255/article/month/2013/06">2013年06月</a><span>(5)</span></li><li><a href="http://blog.csdn.net/stephen255/article/month/2013/05">2013年05月</a><span>(1)</span></li></span><div id="archive_list_button" class="list_closed">展开</div></div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET.html" title="android开源项目和框架">android开源项目和框架</a><span>(28490)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/9142923" title="android权限">android权限</a><span>(8817)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/9056361" title="获得android手机的CPU核心数">获得android手机的CPU核心数</a><span>(5533)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/12188001" title="Android应用如何监听自己是否被卸载及卸载反馈功能的实现">Android应用如何监听自己是否被卸载及卸载反馈功能的实现</a><span>(2982)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/13511467" title="android源码编译">android源码编译</a><span>(2920)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/8978590" title="android 电子书翻页效果">android 电子书翻页效果</a><span>(1516)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/36189569" title="android xml中转义字符的使用">android xml中转义字符的使用</a><span>(1469)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/20148769" title="OpenFire框架学习">OpenFire框架学习</a><span>(1408)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/9224221" title="自定义ViewGroup和View的MotionEvent的关系">自定义ViewGroup和View的MotionEvent的关系</a><span>(869)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/22874423" title="android音频处理">android音频处理</a><span>(686)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET.html" title="android开源项目和框架">android开源项目和框架</a><span>(15)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/9056361" title="获得android手机的CPU核心数">获得android手机的CPU核心数</a><span>(3)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/8978590" title="android 电子书翻页效果">android 电子书翻页效果</a><span>(1)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/9142923" title="android权限">android权限</a><span>(1)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/13511467" title="android源码编译">android源码编译</a><span>(1)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/19493315" title="java多线程（同步与异步的结合）">java多线程（同步与异步的结合）</a><span>(0)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/20135929" title="RTSP协议详解">RTSP协议详解</a><span>(0)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/20147575" title="XMPP协议详解">XMPP协议详解</a><span>(0)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/20148769" title="OpenFire框架学习">OpenFire框架学习</a><span>(0)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/stephen255/article/details/21548353" title="Ubuntu安装android">Ubuntu安装android</a><span>(0)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend"><iframe id="ad_frm_2" frameborder="0" scrolling="no" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ad.html" style="border-width: 0px; overflow: hidden; width: 194px; height: 200px;"></iframe></ul>
+</div>
+<script type="text/javascript">
+ new Ad(12, 'ad_commend');
+</script><div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="http://blog.csdn.net/stephen255/article/details/13511467#comments">android源码编译</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/A201220121991" class="user_name">A201220121991</a>:
+谢谢，非常详细，但是执行emulator命令时，提示没有这个命令？安装qemulator,网上百度的...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/stephen255/article/details/9121583#comments">android开源项目和框架</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/lowprofile_coding" class="user_name">lowprofile_coding</a>:
+make
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/stephen255/article/details/9121583#comments">android开源项目和框架</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/finddreams" class="user_name">finddreams</a>:
+很好的收藏，慢慢学习吧！http://blog.csdn.net/finddreams
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/stephen255/article/details/9121583#comments">android开源项目和框架</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/iplayvs2008" class="user_name">阿瞒多狡黠</a>:
+默默问下怎么mark?
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/stephen255/article/details/9121583#comments">android开源项目和框架</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/ObjectMan0" class="user_name">ObjectMan0</a>:
+mark
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/stephen255/article/details/9142923#comments">android权限</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/zimolanchen" class="user_name">lancy</a>:
+顶
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/stephen255/article/details/9056361#comments">获得android手机的CPU核心数</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/bboyliaoye" class="user_name">阿晔sir</a>:
+安兔兔的CPU核心数获取不是按楼主写的方法了，不知道各位有没有知道现在新版安兔兔检查CPU核心数是怎...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/stephen255/article/details/9056361#comments">android开源项目和框架</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/u012548992" class="user_name">菇凉你别跑</a>:
+给力,mark
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/stephen255/article/details/9056361#comments">android开源项目和框架</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/a62203571" class="user_name">a62203571</a>:
+mark!
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/stephen255/article/details/9056361#comments">android开源项目和框架</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/nbboy_net2" class="user_name">nbboy_net2</a>:
+mark
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/cnick.js"></script>
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/showblogmedal.ashx"></script>
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/JavaScript1.js"></script><link rel="stylesheet" type="text/css" href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/pub_footer_2014.css"><div class="pub_fo"><div id="pub_footerall" class="pub_footer_new"><dl><dt></dt> <dd class="foot_sub_menu"><a href="http://www.csdn.net/company/about.html" target="_blank">公司简介</a><span>|</span><a href="http://www.csdn.net/company/recruit.html" target="_blank">招贤纳士</a><span>|</span><a href="http://www.csdn.net/company/marketing.html" target="_blank">广告服务</a><span>|</span><a href="http://www.csdn.net/company/account.html" target="_blank">银行汇款帐号</a><span>|</span><a href="http://www.csdn.net/company/contact.html" target="_blank">联系方式</a><span>|</span><a href="http://www.csdn.net/company/statement.html" target="_blank">版权声明</a><span>|</span><a href="http://www.csdn.net/company/layer.html" target="_blank">法律顾问</a><span>|</span><a href="mailto:webmaster@csdn.net">问题报告</a><span>|</span><a target="_blank" href="http://www.csdn.net/friendlink.html">合作伙伴</a><span>|</span><a href="http://bbs.csdn.net/forums/Service" target="_blank">论坛反馈</a></dd><dd class="foot_contact"><a href="http://wpa.qq.com/msgrd?v=3&uin=2355263776&site=qq&menu=yes" target="_blank" class="qq">网站客服</a><a href="http://wpa.qq.com/msgrd?v=3&uin=2251809102&site=qq&menu=yes" target="_blank" class="qq">杂志客服</a><a href="http://e.weibo.com/csdnsupport/profile" target="_blank" class="weibo">微博客服</a><a href="mailto:webmaster@csdn.net" class="email" title="联系邮箱">webmaster@csdn.net</a><span class="phone" title="服务热线">400-600-2320</span><span class="interval">|</span><span>北京创新乐知信息技术有限公司 版权所有</span><span class="interval">|</span><span>江苏乐知网络技术有限公司 提供商务支持</span></dd><dd class="foot_copyright"><span>京&nbsp;ICP&nbsp;证&nbsp;070598&nbsp;号</span><span class="interval">|</span><span>Copyright © 1999-2014, CSDN.NET, All Rights Reserved&nbsp;</span><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/gongshang_logos.gif" alt="GongshangLogo" title=""></a></dd></dl></div></div><div id="note1" class="csdn_note" style="display:none; position:absolute; z-index:9999; width:440px">  <span class="notice_top_arrow"><span class="inner"></span></span>  <div class="box"></div></div><div class="csdn_notice_tip" style="position: absolute; z-index: 9990; width: 170px; left: -72px; top: 18px; display: block;">  <iframe src="about:blank" frameborder="0" scrolling="no" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent"></iframe>  <div class="tip_text">您有<strong>40</strong>条新通知</div>  <a href="javascript:void 0" class="close2"></a></div><script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/notify.js"></script>
+
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script><img src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/pv.aspx" border="0" width="0" height="0">
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/counter.js"></script><script type="text/javascript" charset="UTF-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/msg.popup.js"></script>
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ad-blog.js"></script><script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ad-ms1328.js"></script>
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ad-ms1331_2.js"></script>
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ad-ms1334_3.js"></script>
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ad-ms1337_4.js"></script>
+
+<script type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/count.js"></script><iframe src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/logs.html" frameborder="0" width="0" height="0"></iframe>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</script>
+
+
+
+
+    </div><input type="hidden" id="aa_g_data_ids" value="16523886|16447198|16403554|16262862|16167783|16130822|16088783|16087171|16068432|16066681|16039788|16006372|15961710|15948368|15942444|15934748|15901129|15790733|15762516|15659457|15621663|15607930|15590121|15575527|15568597|15537269|15519299|15505361|15215441|15201610|15169261|15132392|15127779|15079724|15054613|15010130|14991723|14961701|14955592|14670603|">
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/toolbar.js"></script>
+     <!--new top-->
+   
+    <link href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ask_float_block.css" type="text/css" rel="stylesheet">
+    <script language="JavaScript" type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/wmd.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/showdown.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/prettify.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ask_float_block.js"></script>
+
+
+
+<div id="tag-suggest-pop" style="display: block;">
+  <div class="relative">
+    <div class="close"></div>
+    <div class="content"><div><span>更多相关资源：</span><a href="http://www.csdn.net/tag/%E6%A1%86%E6%9E%B6" title="关于 框架 的主题" target="_blank">框架</a></div></div>
+  </div>
+</div><link rel="stylesheet" type="text/css" media="screen" href="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/ask_float_fonts_css-6b30a53970eb5c3a2a045e3df585b475.css"><div data-mod="popu_64" class="tracking-ad" chg-blk="0"><a id="com-ask-float-block" title="提问按钮" style="top:428px"></a><a id="com-quick-reply" title="快速回复" style="top:469px"></a><a id="com-d-top-a" style="top: 510px; display: none;" title="返回顶部" onclick=""></a> </div><div class="pop_edit ask_second comm_ask_second"><h3>提问</h3><span class="ask_float_span">您的问题将会被发布在“<a class="ask_float_channel" href="http://ask.csdn.net/" target="_blank" style="cursor:pointer">技术问答</a>”频道</span><a href="http://blog.csdn.net/stephen255/article/details/9121583#" nodetype="close" class="close">×</a><div class="context"><div class="err_div"><span class="err_ico"></span><span class="err_txt">该问题已存在，请勿重复提问</span></div><div class="input_div"><input id="askInputSecond" type="text" style="font-size:14px;" placeholder="问题标题"></div><div class="cm_box"><div class="cm_dialog"></div> <div class="pop_cm cm_add_link"><input type="text" placeholder="链接内容" id="af_cm_link_txt"><input type="text" placeholder="链接地址" id="af_cm_link_url"><input type="text" placeholder="链接提示" id="af_cm_link_tit"><div class="text-right"><span class="btn btn-default btn-sm" id="add_link_btn">插入链接</span> </div> </div><div class="pop_cm cm_add_img"><div class="nav-tabs"><a class="img_tab active" href="http://blog.csdn.net/stephen255/article/details/9121583#tab_upload">本地上传</a><a class="img_tab" href="http://blog.csdn.net/stephen255/article/details/9121583#tab_weburl">网络图片</a></div><div class="tab_panel active" id="tab_upload"><div class="set_img"><iframe src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/upload.html"></iframe></div></div><div class="tab_panel" id="tab_weburl"><input type="text" placeholder="图片地址" id="af_cm_img_url"><input type="text" placeholder="图片说明" id="af_cm_img_alt"><div class="text-right"><span class="btn btn-default btn-sm" id="add_img_btn">插入图片</span> </div></div> </div></div> <textarea id="editor_all" rows="8" style="display: none;"></textarea><div class="editor-toolbar"><i class="separator">|</i><a class="icon-headline" title="标题一（Ctrl+Alt+1）"></a><a class="icon-heading" title="标题二（Ctrl+Alt+2）"></a><a class="icon-bold" title="粗体（Ctrl+B）"></a><a class="icon-italic" title="斜体（Ctrl+I）"></a><i class="separator">|</i><a class="icon-quote-left" title="引用（Ctrl+’）"></a><a class="icon-code" title="插入代码片（Ctrl+,）"></a><a class="icon-list-ul" title="无序列表（Ctrl+L）"></a><a class="icon-list-ol" title="有序列表（Ctrl+Alt+L）"></a><i class="separator">|</i><a class="icon-link" title="添加链接（Ctrl+K）"></a><a class="icon-picture" title="添加图片（Ctrl+Alt+I）"></a><i class="separator">|</i><a class="icon-reply" title="撤退（Ctrl+Z）"></a><a class="icon-share-alt" title="前进（Ctrl+Shift+Z）"></a><i class="separator">|</i><a class="icon-info" href="http://ask.csdn.net/pages/markdown" target="_blank" title="markdown语法参考"></a><a class="icon-preview" title="预览"></a><i class="separator">|</i></div><div class="CodeMirror cm-s-paper CodeMirror-focused"><div style="overflow: hidden; position: relative; width: 3px; height: 0px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none; font-size: 4px;"></textarea></div><div class="CodeMirror-hscrollbar"><div style="height: 1px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="min-width: 33px;"><div style="position: relative;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>&nbsp;<span style="display: inline-block; width: 1px; margin-right: -1px;">&nbsp;</span></pre></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code"></div><div class="CodeMirror-cursor">&nbsp;</div><div class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px;"></div><div class="CodeMirror-gutters" style="display: none;"></div></div></div><div class="editor-statusbar"><span class="lines">0</span><span class="words">0</span><span class="cursor">0:0</span></div><div class="div_tags clearfix"><div id="divSearchTags" class="tags_con"><input type="text"></div><input type="hidden" name="txtSearchTags"></div><div id="ask2_tagRecomm_div" class="drt_tagRecomm tracking-ad" data-mod="popu_73"><span class="drt_tit">推荐标签：</span></div></div><div class="success"><div class="left_area"><input id="chk_cb" type="checkbox"><span class="wyxs">我要悬赏</span><input id="cb_num" class="cb_num" readonly="true"><span class="phib_rii"><span> 币</span></span></div><a href="http://blog.csdn.net/stephen255/article/details/9121583#" nodetype="cancel" class="cancel">取消</a><a href="http://blog.csdn.net/stephen255/article/details/9121583#" nodetype="ok" class="ok">发布</a></div></div><div id="common_ask_div_sc" class="searchContainer"><div class="sTitle">可能存在类似的问题：</div><div class="sFooter"><a class="sFirstNewAsk">我想提一个新问题</a></div></div><style type="text/css" id="xnSmartBarCacheCSSID">
+
+.baiduServiceBottomBar.noDis{display:none !important}.baiduServiceBottomBar.iphoneDevice>ul>li .count{font-size:10px;line-height:12px;height:12px;padding:0px 2px;top:-3px;right:-8px;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;text-shadow:none;outline:none}.baiduServiceBottomBar.hackIFrame iframe{top:0px;-webkit-transform:translateZ(5px);transform:translateZ(5px)}.baiduServiceBottomBar{overflow:visible;line-height:1;border-top:1px solid #c0c0c0;position:fixed;z-index:200;width:100%;bottom:0px;background-color:rgba(242,242,242,0.94);background-image:-moz-linear-gradient(rgba(248,248,248,0.94), rgba(242,242,242,0.94));background-image:-o-linear-gradient(rgba(248,248,248,0.94), rgba(242,242,242,0.94));background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(248,248,248,0.94)), color-stop(1, rgba(242,242,242,0.94)));background-image:-webkit-linear-gradient(rgba(248,248,248,0.94), rgba(242,242,242,0.94));background-image:-ms-linear-gradient(rgba(248,248,248,0.94), rgba(242,242,242,0.94));background-image:linear-gradient(rgba(248,248,248,0.94), rgba(242,242,242,0.94))}.baiduServiceBottomBar div{overflow:visible}.baiduServiceBottomBar div,.baiduServiceBottomBar span,.baiduServiceBottomBar object,.baiduServiceBottomBar iframe,.baiduServiceBottomBar h1,.baiduServiceBottomBar h2,.baiduServiceBottomBar h3,.baiduServiceBottomBar h4,.baiduServiceBottomBar h5,.baiduServiceBottomBar h6,.baiduServiceBottomBar p,.baiduServiceBottomBar a,.baiduServiceBottomBar em,.baiduServiceBottomBar img,.baiduServiceBottomBar b,.baiduServiceBottomBar i,.baiduServiceBottomBar dl,.baiduServiceBottomBar dt,.baiduServiceBottomBar dd,.baiduServiceBottomBar ol,.baiduServiceBottomBar ul,.baiduServiceBottomBar li,.baiduServiceBottomBar fieldset,.baiduServiceBottomBar form,.baiduServiceBottomBar label,.baiduServiceBottomBar table,.baiduServiceBottomBar caption,.baiduServiceBottomBar tbody,.baiduServiceBottomBar tfoot,.baiduServiceBottomBar thead,.baiduServiceBottomBar tr,.baiduServiceBottomBar th,.baiduServiceBottomBar td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline}.baiduServiceBottomBar p,.baiduServiceBottomBar div,.baiduServiceBottomBar h1,.baiduServiceBottomBar h2,.baiduServiceBottomBar h3,.baiduServiceBottomBar h4,.baiduServiceBottomBar h5,.baiduServiceBottomBar h6{-webkit-text-size-adjust:none}.baiduServiceBottomBar ul,.baiduServiceBottomBar li,.baiduServiceBottomBar a{vertical-align:middle}.baiduServiceBottomBar ol,.baiduServiceBottomBar ul{list-style:none;overflow:visible}.baiduServiceBottomBar .qingIcon{width:22px;height:22px;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAqCAMAAADs1AnaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4BpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1YTA3ZWU4Yy0yNTUzLTQzOTktOTliMC0wYTYxYzc3NjY1ZGYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzI1MDJCODkzOENGMTFFNDg2NjdDNzU2MzQwOTc2NzUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzI1MDJCODgzOENGMTFFNDg2NjdDNzU2MzQwOTc2NzUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4YzRhMmIzNy03ODM4LTQyZTMtODI4Yy1lYjc1OTQyNjQwZWQiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDoyOGIzNTdlNi03NTM5LTExNzctODViNy1hYTQ4NGY2ZjI2ZWIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Wt27tAAABmFBMVEXvX2pvs+r/+/vnECDlAhP0kpnwZ3EOcM383uBkRIPmCBj96+z+9fb6z9L4vMDpKznoHCvyfIX2p6397O360NPtUl7rPUrmBxjrPkv83+H2pqz4vsL2qK7lARLnDx/sQE3oHSzyfoftU17ye4TwaHIBeNn+9PXnESHoGyqJh7ZYY6Wq0vNRZan7+fsQcc36ztEHdNQZhd5+u+zc7PrW6fnvZW/4+/7pKDZsVY+1GTsOcs/0lZxhcrB3t+shasH96erv9/34ub5DZK1PouVgca/qM0EOcs7pKjjhAhTp4utmXZr//PwGe9sMftwDetrnFybKvtTpLDrrO0joGSgvkeHtUFzLv9QXhN36zdDpIzLgAxb6+PvlAxS+FzaGv+3H4fddqecCd9hGneTA3vYUg93tUV0Dd9hWS47QCyPoIjGYyPDvXmk9ZbH0k5qv1fN7OG5iVZRVpebrOkegzfH1+v4MctDl8fsIfNshid+MiLXy+P3VCB/n4euslrj8/f+ISHnqLTv0j5Y2leLoITDg7/sAeNrlABH///9RYd6zAAAAiHRSTlP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AGLfWDwAAAZZJREFUeNrc1FV7wjAUBuDiDIr7cDbm7u7u7u7u7kb422spPU0F2PW+qyZ5nz5N0nOIuCD2/nqDcI7gD225SoSUan0aJFcpUCIKlTwVMpoQxGSURFoH4sWhFSHSokOC6CwkH1nNsPa9CI9mK4YMTpinPnm4OZ8dNRbNJZFerWQnk5u3qf306GA/GttsGaQQbJuKE46x/Aotnd/G6PQ9lhLctkM+/Gxe22JsSgjYS5jESM0WkLL3ARZFPBjpkI2xZO/iGSEGHXox8na0A685WaWXGYRfzvYMkIez5LIA/VwCGV2ri0uhm6p7MBt39DGKUfE8kK915kLESMaSymv2alOikdaneCbUXY39bqkQ78f9D+j4LyjQKY28wXEOITSrFSNPBKGVXheHkCsnj4/IMFOuig9ETEMhFGTjyBeChSCvpIYA2d0wGfiU84ozK4kSXYqJv7ZdUOYMkp9CmaOpBVHDSKCKSewrJVpPAmnw/Uo0MR7a1Uq3wwYOpWiHVJYLmxiUprFSeemJajK0aDoTXW67cO5XgAEAv5+0kJ0BN/wAAAAASUVORK5CYII=");margin:10px auto;background-size:100% 100%}.baiduServiceBottomBar .qingBtn{width:48px;height:48px;background-color:#f8f8f8;border:1px solid #ddd}.baiduServiceBottomBar .qingIcon,.baiduServiceBottomBar .qingBtn{display:block}.baiduServiceBottomBar *{vertical-align:middle;box-sizing:border-box}.baiduServiceBottomBar .baidu-xn-pop-parent{position:relative}.baiduServiceBottomBar .baidu-xn-pop-container{position:absolute;bottom:100%;display:none;z-index:-90;width:113%;background-color:rgba(255,255,255,0.94);background-image:-moz-linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94));background-image:-o-linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94));background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,0.94)), color-stop(1, rgba(255,255,255,0.94)));background-image:-webkit-linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94));background-image:-ms-linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94));background-image:linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94));left:initial !important;margin-left:-7px;border:1px solid #c0c0c0;border-radius:2px;box-shadow:0px 0px 4px 1px rgba(0,0,0,0.12);margin-bottom:12px;-webkit-transform:scale(1)}.baiduServiceBottomBar .baidu-xn-pop-container ul,.baiduServiceBottomBar .baidu-xn-pop-container li{list-style:none}.baiduServiceBottomBar .baidu-xn-pop-container ul{padding:0px 9px;height:auto}.baiduServiceBottomBar .baidu-xn-pop-container ul>li:not(:last-of-type){border-bottom:1px solid #dddddd}.baiduServiceBottomBar .baidu-xn-pop-container li.vote{height:43px}.baiduServiceBottomBar .baidu-xn-pop-container ul>li{height:36px}.baiduServiceBottomBar .baidu-xn-pop-container ul>li a{padding:1px 0;font-size:14px}.baiduServiceBottomBar .baidu-xn-pop-container.show,.baiduServiceBottomBar .show>.baidu-xn-pop-container{display:block;z-index:-90}.baiduServiceBottomBar .noDis{display:none !important}.baiduServiceBottomBar a{text-decoration:none;color:#001526}.baiduServiceBottomBar>ul{display:-webkit-box;display:-ms-flexbox;display:-moz-box;display:box;width:100%;list-style-type:none;padding:0px;margin:0px;-webkit-box-pack:center;-webkit-box-align:center;box-pack:center;box-align:center;border:0 #fafafb solid;border-width:1px 0 0 1px}.baiduServiceBottomBar>ul>li{display:block;width:3em;-webkit-box-flex:1;flex:1;-ms-flex:1;-moz-box-flex:1;text-align:center;font-size:10px}.baiduServiceBottomBar>ul>li a{font-size:16px;padding:6px 0px 4px;display:inline-block;display:inline-block;width:100%;line-height:34px;height:43px;text-align:center}.baiduServiceBottomBar>ul>li a p>span.text-char{text-shadow:0 1px #fff}.baiduServiceBottomBar>ul>li .icon{width:18px;height:18px;display:block;margin:0px auto 4px;background-size:100% 100%;vertical-align:middle;position:relative}.baiduServiceBottomBar>ul>li .count-outer{position:relative;width:auto;display:inline-block;line-height:inherit}.baiduServiceBottomBar>ul>li .count{background-color:#f43b3b;color:#fff;border-radius:1px;padding:0px 2px;position:absolute;font-size:10px;line-height:12px;height:12px;top:-3px;right:-10px;font-style:normal;text-shadow:none;outline:none}.baiduServiceBottomBar>ul>li .baidu-xn-pop-container .count{top:3px}.baiduServiceBottomBar>ul li.showMoreBtn{display:none;position:relative}.baiduServiceBottomBar>ul .comment .count{right:-9px}.baiduServiceBottomBar>ul .pop-tip{-webkit-transform:rotateZ(45deg);transform:rotateZ(45deg);width:6px;height:6px;z-index:300;top:-15px;left:-55%;position:absolute;border:1px solid #c0c0c0;background-color:rgba(255,255,255,0.94);display:none}.baiduServiceBottomBar>ul .pop-tip.align-right{margin-left:100%;border-left:0px;border-top:0px}@media only screen and (max-width: 400px){.baiduServiceBottomBar .show-more-buttons>li:nth-of-type(n+4),.baiduServiceBottomBar .show-more-buttons-lg>li:nth-of-type(n+4){display:none}.baiduServiceBottomBar .show-more-buttons>li.showMoreBtn,.baiduServiceBottomBar .show-more-buttons-lg>li.showMoreBtn{display:block}}@media only screen and (min-width: 400px) and (max-width: 480px){.baiduServiceBottomBar .show-more-buttons-lg>li:nth-of-type(n+5){display:none}.baiduServiceBottomBar .show-more-buttons-lg>li.showMoreBtn{display:block}}@media only screen and (max-device-width: 600px){.baiduServiceBottomBar #mobile-phone-detector{display:block}}.baiduServiceBottomBar [data-action=ecomBottomBar-vote]{position:relative}.baiduServiceBottomBar [data-action=ecomBottomBar-vote] .bd_vote{position:absolute;z-index:1;height:100%;width:100%;top:0px}.baiduServiceBottomBar [data-action=ecomBottomBar-vote] .text-char{display:inline-block;-webkit-transform:translateZ(0px);transform:translateZ(0px)}.baiduServiceBottomBar [data-action=ecomBottomBar-vote] .bd_vote iframe{position:relative}.baiduServiceBottomBar>ul>li:last-of-type .baidu-xn-pop-container{right:10px}.baiduServiceBottomBar>ul>li:first-of-type .baidu-xn-pop-container{left:8px !important;margin-left:0px}.baiduServiceBottomBar .baidu-xn-pop-parent:after{position:absolute;top:0px;left:50%;width:12px;height:3px;-webkit-box-sizing:border-box;box-sizing:border-box;border:1px solid #c0c0c0;border-left:0px;border-right:0px;margin:6px 0px 6px -6px;content:""}.baiduServiceBottomBar .qingBtn{display:none}.baiduServiceBottomBar.showQingIconStyle.hideContent{border-top:transparent;width:auto}.baiduServiceBottomBar.showQingIconStyle.hideContent .qingBtn{display:block}.baiduServiceBottomBar.showQingIconStyle.hideContent .icon-container{display:none}.baiduServiceBottomBar.showQingIconStyle{display:-webkit-box;display:-ms-flexbox;display:-moz-box;-webkit-box-pack:center;-webkit-box-align:center;box-pack:center;box-align:center}.baiduServiceBottomBar.showQingIconStyle .qingBtn{display:block}.baiduServiceBottomBar.showQingIconStyle>ul>li:first-of-type .baidu-xn-pop-container{left:initial !important;margin-left:-10%}.baiduServiceBottomBar.showQingIconStyle [data-action=ecomBottomBar-showMore]{max-width:50px}.baiduServiceBottomBar.showQingIconStyle [data-action=ecomBottomBar-showMore] .baidu-xn-pop-container{width:180%}.baiduServiceBottomBar.showQingIconStyle [data-action=ecomBottomBar-showMore] .pop-tip.align-right{margin-left:120%}.baiduServiceBottomBar.showQingIconStyle.showContent{width:100%}.baiduServiceBottomBar.showQingIconStyle.showContent .qingBtn{border:1px solid transparent;border-right:1px solid #cdcdcd}.baiduServiceBottomBar.showQingIconStyle.showContent .qingIcon{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjRENkJCMzY0NkJGMTFFNEI4NTc5NjE5QjFBMjJERTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjRENkJCMzc0NkJGMTFFNEI4NTc5NjE5QjFBMjJERTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2NEQ2QkIzNDQ2QkYxMUU0Qjg1Nzk2MTlCMUEyMkRFNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2NEQ2QkIzNTQ2QkYxMUU0Qjg1Nzk2MTlCMUEyMkRFNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgNHqQMAAAA8UExURdLS0tzc3Onp6fj4+ExMTHt7e2xsbNXV1fz8/Hl5ef39/dTU1E1NTfn5+ejo6Nra2tPT0z8/PzMzM////3wYFWQAAAAUdFJOU/////////////////////////8AT0/nEQAAAT5JREFUeNrMl9sSgjAMRLcFRFFu6f//q1ekjLRJ3XHGvtI9QLpJEwRy4W8A3nUlss75DaBqRC6tXd9eRJp+BfQHua15suqn+b7/UL0BJ5ESwlMvcloAXqSEsOhF/AvgpISw6sW9AMe6gBDp6+MSg/NsJkT6+bwe42QlxBsRG8lI+NS/nWgi7OjXXDAQ9vRRMqmEXX2cjQphX79J5ywh9RDBRkg+gm1bGg3TizKfBsuv5oIDQ7CywUVQCfnjRdAIij2gWG7SDArNtJrBoaWNlmIIRkIqRRFshGSRQDAR0kUGlvKVK3O/A7C/wAaRPUbWSKyV2WRi05ktKGxJY4sqW9bZi4W92tjLlb3e2QaDbXHYJott89hGk2116WabbvfpgYMeeULFDl2Psa8uHfuqjROHsWzwHIe/m52/XlcBBgCFdCWM9zfnWwAAAABJRU5ErkJggg==)}.baiduServiceBottomBar.showQingIconStyle.showContent .icon-container{display:-webkit-box;display:-ms-flexbox;display:-moz-box;dislay:box;-webkit-box-flex:1;flex:1;-ms-flex:1;-moz-box-flex:1}.baiduServiceBottomBar.double-scale>ul>li a{line-height:68px;height:86px;font-size:32px;padding:12px 0 4px}.baiduServiceBottomBar.double-scale>ul>li .baidu-xn-pop-container{width:113%}.baiduServiceBottomBar.double-scale>ul>li .baidu-xn-pop-container ul{padding:0px 18px}.baiduServiceBottomBar.double-scale>ul>li .baidu-xn-pop-container ul>li{height:72px;line-height:60px;width:100%}.baiduServiceBottomBar.double-scale>ul>li .baidu-xn-pop-container ul>li a{padding:0px;line-height:72px;height:72px}.baiduServiceBottomBar.double-scale>ul>li .count{font-size:20px;line-height:20px;height:20px;padding:0 6px;top:6px;right:-20px;text-shadow:none;outline:none;border-radius:4px}.baiduServiceBottomBar.double-scale .baidu-xn-pop-parent:after{width:24px;height:6px;margin:12px 0 12px -12px;content:""}@media only screen and (max-width: 800px){.baiduServiceBottomBar.double-scale .show-more-buttons>li:nth-of-type(n+4),.baiduServiceBottomBar.double-scale .show-more-buttons-lg>li:nth-of-type(n+4){display:none}.baiduServiceBottomBar.double-scale .show-more-buttons>li.showMoreBtn,.baiduServiceBottomBar.double-scale .show-more-buttons-lg>li.showMoreBtn{display:block}}@media only screen and (min-width: 800px) and (max-width: 960px){.baiduServiceBottomBar.double-scale .show-more-buttons-lg>li:nth-of-type(n+5){display:none}.baiduServiceBottomBar.double-scale .show-more-buttons-lg>li.showMoreBtn{display:block}}.smb-user-guide-wrapper{position:fixed;z-index:9999;background:rgba(15,15,15,0.8);top:83px;width:238px;height:195px;left:50%;margin-left:-119px;border-radius:10px;font-size:14px;font-family:sans-serif}.smb-user-guide-wrapper .bg-pic{margin-top:24px;height:131px;background:url(//m.baidu.com/static/search/siteapp/lego/use_guide.png) center no-repeat;background-size:208px 131px}.smb-user-guide-wrapper .queryX{position:absolute;left:44px;top:90px}.smb-user-guide-wrapper .closeX{display:block;margin:8px auto;color:#fff;width:110px;height:25px;line-height:25px;text-align:center}.baiduServiceBottomBar-toast-container{position:fixed;z-index:99999999;width:100%;bottom:50px;text-align:center}.baiduServiceBottomBar-toast-container .toast-text{min-width:40%;max-width:80%;overflow:hidden;word-break:break-all;word-wrap:nowrap;text-overflow:ellipsis;background-color:rgba(0,0,0,0.75);opacity:0;-webkit-transition:opacity 2s linear 0s;border-radius:5px;color:#fff;padding:10px;margin:0px auto;font-size:16px}.baiduServiceBottomBar-toast-container.show .toast-text{opacity:1}.baiduServiceBottomBar-toast-container.noDis{display:none !important}body,html{padding:0px;margin:0px}
+
+/**
+ * 用于将 css 以内联 js 的形式插入到页面中去
+ */
+</style><script type="text/javascript" charset="utf-8" src="http://127.0.0.1:7777/getcuid?callback=xnJSONP048497" defer=""></script><div class="baiduServiceBottomBar noDis"><a class="qingBtn" data-action="ecomBottomBar-iconBtn" onclick="javascript:void(0);"><i class="qingIcon"></i></a><ul class="showCount-3 icon-container"><li><a data-action="ecomBottomBar-comment" onclick="javascript:void(0);" class="hackTJMark"><p class="count-outer"><span class="text-char">评价</span><span class="count" style="right: 0px;">21</span></p></a></li><li><a data-action="qingBottomBarShare" onclick="javascript:void(0);"><p class="count-outer"><span class="text-char">分享</span><span class="count noDis"></span></p></a></li><li><a data-action="ecomBottomBar-vote" onclick="javascript:void(0);"><p class="count-outer"><span class="text-char">赞</span><span class="count" style="right: 0px;">221</span></p><div class="bd_vote" data-inited="1"><iframe id="vote143081484981069" style="border: none; width: 100%; height: 100%; display: block;" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/like.html"></iframe></div></a></li><li class="showMoreBtn baidu-xn-pop-parent" data-action="ecomBottomBar-showMore"><a onclick="javascript:void(0);">更多</a><div class="noDis"><div class="baidu-xn-pop-container"><div class="pop-content"><ul></ul></div></div><div class="pop-tip align-right"></div></div></li></ul><!-- hack form mobile phone detect --><span id="mobile-phone-detector"></span></div><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/info" defer=""></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/vote.js" async=""></script><iframe src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/langchao-apr-Cloud-daohangtiaoxia-banner-960-90-30k.html" style="width: 1px; height: 1px; position: absolute; visibility: hidden;"></iframe><iframe src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/langchao-apr-Article-innerpage-plsf-banner-620-90-30k.html" style="width: 1px; height: 1px; position: absolute; visibility: hidden;"></iframe><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/info(1)" defer=""></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/info(2)" defer=""></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/info(3)" defer=""></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/info(4)" defer=""></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/info(5)" defer=""></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/info(6)" defer=""></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/info(7)" defer=""></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/info(8)" defer=""></script><script type="text/javascript" charset="utf-8" src="./android开源项目和框架 - stephen255的专栏 - 博客频道 - CSDN.NET_files/info(9)" defer=""></script></body></html>
